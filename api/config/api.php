@@ -54,9 +54,9 @@ $config = [
             // Set Parser to JsonParser to accept Json in request
             //'class' => '\yii\web\Request',
             'enableCookieValidation' => false,
-            'parsers' => [
+            /*'parsers' => [
                 'application/json'  => 'yii\web\JsonParser',
-            ]
+            ]*/
         ],
         'cache'  => [
             'class'  => 'yii\caching\FileCache',

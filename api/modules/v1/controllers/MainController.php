@@ -6,6 +6,8 @@ use Yii;
 use yii\rest\Controller;
 use app\models\LoginForm;
 use app\models\Signup;
+use yii\web\JsonParser;
+use yii\web\Request;
 
 class MainController extends Controller 
 {
@@ -39,6 +41,12 @@ class MainController extends Controller
     }    
     public function actionTest()
     {
-        return ['post' => $_POST];
+        $request = Yii::$app->request;
+        // returns all parameters
+        $params = $request->bodyParams;
+       
+        // returns the parameter "id"
+        //$param = $request->getBodyParam('data');
+        return  $params;
     }
 }

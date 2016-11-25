@@ -32,8 +32,9 @@ class ServicesSection extends \yii\db\ActiveRecord
     {
         return [
             'id',
-            'one_id' => function($model){
-                return md5($model->id. $model->section_name);
+            'one_id',
+            'layer' => function () {
+                return 'sections';
             },
             'section_name',
             'description',
@@ -56,6 +57,7 @@ class ServicesSection extends \yii\db\ActiveRecord
             [['sort'], 'integer'],
             [['section_name', 'description'], 'string', 'max' => 255],
             [['color'], 'string', 'max' => 7],
+            [['one_id'], 'string', 'max' => 32],
             [['picture'], 'file','extensions'=> ['jpg', 'jpeg', 'bmp', 'png']],
         ];
     }
@@ -82,6 +84,15 @@ class ServicesSection extends \yii\db\ActiveRecord
     public function getServices()
     {
         return $this->hasMany(Service::className(), ['section' => 'id']);
+    }
+    
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            $this->one_id = md5($this->id. $this->section_name);
+            return true;
+        }
+        return false;
     }
     
     /**

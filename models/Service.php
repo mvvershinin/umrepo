@@ -33,8 +33,9 @@ class Service extends \yii\db\ActiveRecord
     {
         return [
             'id',
-            'one_id' => function($model){
-                return md5($model->id. $model->serv_name);
+            'one_id',
+            'layer'=> function () {
+                return 'services';
             },
             'serv_name',
             'description',
@@ -43,7 +44,6 @@ class Service extends \yii\db\ActiveRecord
             'color',
             'spec' => function ($model) {
                 return $model->serviceSpecs;
-                
             },
         ];
     }
@@ -59,6 +59,7 @@ class Service extends \yii\db\ActiveRecord
             [['section', 'sort'], 'integer'],
             [['serv_name', 'description'], 'string', 'max' => 255],
             [['color'], 'string', 'max' => 7],
+            [['one_id'], 'string', 'max' => 32],
             [['section'], 'exist', 'skipOnError' => true, 'targetClass' => ServicesSection::className(), 'targetAttribute' => ['section' => 'id']],
             [['picture'], 'file','extensions'=> ['jpg', 'jpeg', 'png']],
         ];
@@ -114,6 +115,15 @@ class Service extends \yii\db\ActiveRecord
     public function getServiceSpecArray()
     {
         return $this->hasMany(ServiceSpec::className(), ['service' => 'id'])->asArray();
+    }
+    
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            $this->one_id = md5($this->id. $this->serv_name);
+            return true;
+        }
+        return false;
     }
     /**
      * @inheritdoc

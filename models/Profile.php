@@ -3,6 +3,9 @@
 namespace app\models;
 
 use Yii;
+use app\models\ServicesSection;
+use app\models\Service;
+use app\models\ServiceSpec;
 
 /**
  * This is the model class for table "profile".
@@ -52,8 +55,9 @@ class Profile extends \yii\db\ActiveRecord
             'is_master',
             'location_place_id',
             'work_place_id',
+            
             'services' => function ($model) {
-                return $model->services;
+                return array_merge($model->sections, $model->services);
             },
             /*'servicesPrice' => function ($model) {
                 return $model->servicesPrice;
@@ -74,6 +78,20 @@ class Profile extends \yii\db\ActiveRecord
             },
             ];
     }
+    
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => \voskobovich\behaviors\ManyToManyBehavior::className(),
+                'relations' => [
+                    'section_ids' => 'sections',
+                    'service_ids' => 'services',
+                    'spec_ids' => 'specs',
+                ],
+            ],
+        ];
+    }
     /**
      * @inheritdoc
      */
@@ -84,9 +102,12 @@ class Profile extends \yii\db\ActiveRecord
             //[['uid', 'is_master', 'location_place_id', 'work_place_id'], 'integer'],
             [['about'], 'string'],
             [['avatar'], 'string', 'max' => 255],
-            //[['firstname', 'patronymic', 'lastname'], 'string', 'max' => 100],
+            [['firstname', 'patronymic', 'lastname'], 'string', 'max' => 100],
             [['gender'], 'string', 'max' => 10],
             //[['uid'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['uid' => 'id']],
+            [['section_ids'], 'each', 'rule' => ['integer']],
+            [['service_ids'], 'each', 'rule' => ['integer']],
+            [['spec_ids'], 'each', 'rule' => ['integer']],
         ];
     }
 
@@ -117,8 +138,22 @@ class Profile extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'uid']);
     }
+    public function getSections()
+    {
+        return $this->hasMany(ServicesSection::className(), ['one_id' => 'section_one_id'])
+             ->viaTable('{{%rel_profile_section}}', ['profile_id' => 'id']);
+    }
     public function getServices()
     {
+        return $this->hasMany(Service::className(), ['one_id' => 'service_one_id'])
+             ->viaTable('{{%rel_profile_service}}', ['profile_id' => 'id']);
+    }
+    /*
+    public function getServices()
+    {
+        if($this->firstname == 'Лаврентий'){
+            return [['one_id' => 'ee215a634762af055aac350fa241555', 'service_name' => 'Уникаольный чувак',]];
+        }else 
         return [
             ['one_id' => 'ee215a634762af055aac350fa2415994', 'service_name' => 'Парикмахер',],
             ['one_id' => '8db7293433ce1ed9d520b2d46125d25a', 'service_name' => 'Маникюр',],
@@ -126,6 +161,8 @@ class Profile extends \yii\db\ActiveRecord
             ]
             ;
     }
+     * 
+     */
     public function getServicesPrice()
     {
         return ([

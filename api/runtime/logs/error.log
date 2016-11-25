@@ -23680,3 +23680,2640 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1479932042.06
     'REQUEST_TIME' => 1479932042
 ]
+2016-11-24 23:48:18 [109.124.0.89][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'umkadb'@'localhost' (using password: NO)' in /var/www/umka/vendor/yiisoft/yii2/db/Connection.php:602
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Connection.php(602): PDO->__construct('mysql:host=loca...', 'umkadb', '', NULL)
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Connection.php(544): yii\db\Connection->createPdoInstance()
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Connection.php(863): yii\db\Connection->open()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/Connection.php(850): yii\db\Connection->getMasterPdo()
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#5 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#6 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#7 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#8 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#9 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#10 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#11 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#12 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#13 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#14 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#15 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#16 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#17 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#18 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#19 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#20 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#21 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#22 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#24 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'umkadb'@'localhost' (using password: NO)' in /var/www/umka/vendor/yiisoft/yii2/db/Connection.php:549
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Connection.php(863): yii\db\Connection->open()
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Connection.php(850): yii\db\Connection->getMasterPdo()
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(219): yii\db\Connection->getSlavePdo()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(894): yii\db\Command->prepare(true)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#5 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#6 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#7 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#8 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#10 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#11 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#12 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#14 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#16 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#18 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#19 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#20 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#22 {main}
+Additional Information:
+
+2016-11-24 23:48:18 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55083'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480006098.639
+    'REQUEST_TIME' => 1480006098
+]
+2016-11-24 23:52:06 [109.124.0.89][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: uid' in /var/www/umka/api/modules/v1/controllers/ProfileController.php:17
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/ProfileController.php(17): yii\base\ErrorHandler->handleError(8, 'Undefined index...', '/var/www/umka/a...', 17, Array)
+#1 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(220): app\api\modules\v1\controllers\ProfileController->actions()
+#2 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(123): yii\base\Controller->createAction('index')
+#3 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#7 {main}
+2016-11-24 23:52:06 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55124'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480006326.828
+    'REQUEST_TIME' => 1480006326
+]
+2016-11-24 23:53:19 [109.124.0.89][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: uid' in /var/www/umka/api/modules/v1/controllers/ProfileController.php:17
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/ProfileController.php(17): yii\base\ErrorHandler->handleError(8, 'Undefined index...', '/var/www/umka/a...', 17, Array)
+#1 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(220): app\api\modules\v1\controllers\ProfileController->actions()
+#2 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(123): yii\base\Controller->createAction('index')
+#3 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#7 {main}
+2016-11-24 23:53:19 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55125'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480006399.351
+    'REQUEST_TIME' => 1480006399
+]
+2016-11-25 00:01:09 [109.124.0.89][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'app\api\modules\v1\controllers\Yii' not found' in /var/www/umka/api/modules/v1/controllers/ProfileController.php:25
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-11-25 00:01:09 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55185'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480006869.601
+    'REQUEST_TIME' => 1480006869
+]
+2016-11-25 00:09:45 [109.124.0.89][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: uid' in /var/www/umka/api/modules/v1/controllers/ProfileController.php:34
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/ProfileController.php(34): yii\base\ErrorHandler->handleError(8, 'Undefined index...', '/var/www/umka/a...', 34, Array)
+#1 [internal function]: app\api\modules\v1\controllers\ProfileController->app\api\modules\v1\controllers\{closure}(Object(yii\rest\IndexAction))
+#2 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(54): call_user_func(Object(Closure), Object(yii\rest\IndexAction))
+#3 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(44): yii\rest\IndexAction->prepareDataProvider()
+#4 [internal function]: yii\rest\IndexAction->run()
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\Action->runWithParams(Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#8 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#9 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#11 {main}
+2016-11-25 00:09:45 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55349'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480007385.193
+    'REQUEST_TIME' => 1480007385
+]
+2016-11-25 00:10:14 [109.124.0.89][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: data' in /var/www/umka/api/modules/v1/controllers/ProfileController.php:34
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/ProfileController.php(34): yii\base\ErrorHandler->handleError(8, 'Undefined index...', '/var/www/umka/a...', 34, Array)
+#1 [internal function]: app\api\modules\v1\controllers\ProfileController->app\api\modules\v1\controllers\{closure}(Object(yii\rest\IndexAction))
+#2 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(54): call_user_func(Object(Closure), Object(yii\rest\IndexAction))
+#3 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(44): yii\rest\IndexAction->prepareDataProvider()
+#4 [internal function]: yii\rest\IndexAction->run()
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\Action->runWithParams(Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#8 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#9 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#11 {main}
+2016-11-25 00:10:14 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55350'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480007414.952
+    'REQUEST_TIME' => 1480007414
+]
+2016-11-25 00:10:36 [109.124.0.89][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in /var/www/umka/api/modules/v1/controllers/ProfileController.php:34
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/ProfileController.php(34): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', '/var/www/umka/a...', 34, Array)
+#1 [internal function]: app\api\modules\v1\controllers\ProfileController->app\api\modules\v1\controllers\{closure}(Object(yii\rest\IndexAction))
+#2 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(54): call_user_func(Object(Closure), Object(yii\rest\IndexAction))
+#3 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(44): yii\rest\IndexAction->prepareDataProvider()
+#4 [internal function]: yii\rest\IndexAction->run()
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\Action->runWithParams(Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#8 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#9 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#11 {main}
+2016-11-25 00:10:36 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55351'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480007436.842
+    'REQUEST_TIME' => 1480007436
+]
+2016-11-25 00:11:10 [109.124.0.89][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Use of undefined constant params - assumed 'params'' in /var/www/umka/api/modules/v1/controllers/ProfileController.php:31
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/ProfileController.php(31): yii\base\ErrorHandler->handleError(8, 'Use of undefine...', '/var/www/umka/a...', 31, Array)
+#1 [internal function]: app\api\modules\v1\controllers\ProfileController->app\api\modules\v1\controllers\{closure}(Object(yii\rest\IndexAction))
+#2 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(54): call_user_func(Object(Closure), Object(yii\rest\IndexAction))
+#3 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(44): yii\rest\IndexAction->prepareDataProvider()
+#4 [internal function]: yii\rest\IndexAction->run()
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\Action->runWithParams(Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#8 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#9 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#11 {main}
+2016-11-25 00:11:10 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55353'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480007470.841
+    'REQUEST_TIME' => 1480007470
+]
+2016-11-25 00:17:57 [109.124.0.89][-][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: yii\web\Request::getQueryString' in /var/www/umka/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/MainController.php(45): yii\base\Component->__get('getQueryString')
+#1 [internal function]: app\api\modules\v1\controllers\MainController->actionTest()
+#2 /var/www/umka/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#8 {main}
+2016-11-25 00:17:57 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55380'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/main/test'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480007877.544
+    'REQUEST_TIME' => 1480007877
+]
+2016-11-25 00:39:38 [109.124.0.89][-][-][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: yii\web\Request::parce()' in /var/www/umka/vendor/yiisoft/yii2/base/Component.php:285
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/MainController.php(49): yii\base\Component->__call('parce', Array)
+#1 /var/www/umka/api/modules/v1/controllers/MainController.php(49): yii\web\Request->parce()
+#2 [internal function]: app\api\modules\v1\controllers\MainController->actionTest()
+#3 /var/www/umka/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#9 {main}
+2016-11-25 00:39:38 [109.124.0.89][-][-][info][application] $_GET = [
+    'filter' => '{\"uid\":28}'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55648'
+    'REDIRECT_QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REQUEST_URI' => '/api/v1/main/test?filter={%22uid%22:28}'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480009178.242
+    'REQUEST_TIME' => 1480009178
+]
+2016-11-25 00:44:51 [109.124.0.89][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method Yii::app()' in /var/www/umka/api/modules/v1/controllers/MainController.php:49
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-11-25 00:44:51 [109.124.0.89][-][-][info][application] $_GET = [
+    'filter' => '{\"uid\":28}'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55726'
+    'REDIRECT_QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REQUEST_URI' => '/api/v1/main/test?filter={%22uid%22:28}'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480009491.385
+    'REQUEST_TIME' => 1480009491
+]
+2016-11-25 00:45:05 [109.124.0.89][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: app' in /var/www/umka/api/modules/v1/controllers/MainController.php:49
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/MainController.php(49): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', '/var/www/umka/a...', 49, Array)
+#1 [internal function]: app\api\modules\v1\controllers\MainController->actionTest()
+#2 /var/www/umka/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#8 {main}
+2016-11-25 00:45:05 [109.124.0.89][-][-][info][application] $_GET = [
+    'filter' => '{\"uid\":28}'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55727'
+    'REDIRECT_QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REQUEST_URI' => '/api/v1/main/test?filter={%22uid%22:28}'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480009505.643
+    'REQUEST_TIME' => 1480009505
+]
+2016-11-25 00:45:18 [109.124.0.89][-][-][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: yii\web\Request::getQuery()' in /var/www/umka/vendor/yiisoft/yii2/base/Component.php:285
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/MainController.php(49): yii\base\Component->__call('getQuery', Array)
+#1 /var/www/umka/api/modules/v1/controllers/MainController.php(49): yii\web\Request->getQuery()
+#2 [internal function]: app\api\modules\v1\controllers\MainController->actionTest()
+#3 /var/www/umka/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#9 {main}
+2016-11-25 00:45:18 [109.124.0.89][-][-][info][application] $_GET = [
+    'filter' => '{\"uid\":28}'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55728'
+    'REDIRECT_QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REQUEST_URI' => '/api/v1/main/test?filter={%22uid%22:28}'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480009518.827
+    'REQUEST_TIME' => 1480009518
+]
+2016-11-25 00:49:52 [109.124.0.89][-][-][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: yii\web\Request::parse()' in /var/www/umka/vendor/yiisoft/yii2/base/Component.php:285
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/MainController.php(49): yii\base\Component->__call('parse', Array)
+#1 /var/www/umka/api/modules/v1/controllers/MainController.php(49): yii\web\Request->parse()
+#2 [internal function]: app\api\modules\v1\controllers\MainController->actionTest()
+#3 /var/www/umka/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#9 {main}
+2016-11-25 00:49:52 [109.124.0.89][-][-][info][application] $_GET = [
+    'filter' => '{\"uid\":28}'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55782'
+    'REDIRECT_QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REQUEST_URI' => '/api/v1/main/test?filter={%22uid%22:28}'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480009792.811
+    'REQUEST_TIME' => 1480009792
+]
+2016-11-25 00:50:37 [109.124.0.89][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Missing argument 1 for yii\web\JsonParser::parse(), called in /var/www/umka/api/modules/v1/controllers/MainController.php on line 49 and defined' in /var/www/umka/vendor/yiisoft/yii2/web/JsonParser.php:48
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/web/JsonParser.php(48): yii\base\ErrorHandler->handleError(2, 'Missing argumen...', '/var/www/umka/v...', 48, Array)
+#1 /var/www/umka/api/modules/v1/controllers/MainController.php(49): yii\web\JsonParser->parse()
+#2 [internal function]: app\api\modules\v1\controllers\MainController->actionTest()
+#3 /var/www/umka/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#9 {main}
+2016-11-25 00:50:37 [109.124.0.89][-][-][info][application] $_GET = [
+    'filter' => '{\"uid\":28}'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55783'
+    'REDIRECT_QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REQUEST_URI' => '/api/v1/main/test?filter={%22uid%22:28}'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480009837.305
+    'REQUEST_TIME' => 1480009837
+]
+2016-11-25 00:50:56 [109.124.0.89][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Missing argument 2 for yii\web\JsonParser::parse(), called in /var/www/umka/api/modules/v1/controllers/MainController.php on line 49 and defined' in /var/www/umka/vendor/yiisoft/yii2/web/JsonParser.php:48
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/web/JsonParser.php(48): yii\base\ErrorHandler->handleError(2, 'Missing argumen...', '/var/www/umka/v...', 48, Array)
+#1 /var/www/umka/api/modules/v1/controllers/MainController.php(49): yii\web\JsonParser->parse(Object(yii\web\Request))
+#2 [internal function]: app\api\modules\v1\controllers\MainController->actionTest()
+#3 /var/www/umka/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#9 {main}
+2016-11-25 00:50:56 [109.124.0.89][-][-][info][application] $_GET = [
+    'filter' => '{\"uid\":28}'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55788'
+    'REDIRECT_QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REQUEST_URI' => '/api/v1/main/test?filter={%22uid%22:28}'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480009856.666
+    'REQUEST_TIME' => 1480009856
+]
+2016-11-25 00:51:25 [109.124.0.89][-][-][error][yii\base\ErrorException:4096] exception 'yii\base\ErrorException' with message 'Object of class yii\web\Request could not be converted to string' in /var/www/umka/vendor/yiisoft/yii2/helpers/BaseJson.php:96
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/helpers/BaseJson.php(96): yii\base\ErrorHandler->handleError(4096, 'Object of class...', '/var/www/umka/v...', 96, Array)
+#1 /var/www/umka/vendor/yiisoft/yii2/web/JsonParser.php(51): yii\helpers\BaseJson::decode(Object(yii\web\Request), true)
+#2 /var/www/umka/api/modules/v1/controllers/MainController.php(49): yii\web\JsonParser->parse(Object(yii\web\Request), true)
+#3 [internal function]: app\api\modules\v1\controllers\MainController->actionTest()
+#4 /var/www/umka/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#8 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#10 {main}
+2016-11-25 00:51:25 [109.124.0.89][-][-][info][application] $_GET = [
+    'filter' => '{\"uid\":28}'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55790'
+    'REDIRECT_QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REQUEST_URI' => '/api/v1/main/test?filter={%22uid%22:28}'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480009885.419
+    'REQUEST_TIME' => 1480009885
+]
+2016-11-25 00:52:19 [109.124.0.89][-][-][error][yii\web\HttpException:400] exception 'yii\web\BadRequestHttpException' with message 'Invalid JSON data in request body: Invalid JSON data.' in /var/www/umka/vendor/yiisoft/yii2/web/JsonParser.php:55
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/MainController.php(49): yii\web\JsonParser->parse(Array, true)
+#1 [internal function]: app\api\modules\v1\controllers\MainController->actionTest()
+#2 /var/www/umka/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#8 {main}
+2016-11-25 00:52:18 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55796'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/main/test'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480009938.948
+    'REQUEST_TIME' => 1480009938
+]
+2016-11-25 00:52:45 [109.124.0.89][-][-][error][yii\web\HttpException:400] exception 'yii\web\BadRequestHttpException' with message 'Invalid JSON data in request body: Invalid JSON data.' in /var/www/umka/vendor/yiisoft/yii2/web/JsonParser.php:55
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/MainController.php(49): yii\web\JsonParser->parse(Array, true)
+#1 [internal function]: app\api\modules\v1\controllers\MainController->actionTest()
+#2 /var/www/umka/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#8 {main}
+2016-11-25 00:52:45 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55797'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/main/test'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480009965.282
+    'REQUEST_TIME' => 1480009965
+]
+2016-11-25 00:53:13 [109.124.0.89][-][-][error][yii\web\HttpException:400] exception 'yii\web\BadRequestHttpException' with message 'Invalid JSON data in request body: Invalid JSON data.' in /var/www/umka/vendor/yiisoft/yii2/web/JsonParser.php:55
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/MainController.php(49): yii\web\JsonParser->parse(Array, true)
+#1 [internal function]: app\api\modules\v1\controllers\MainController->actionTest()
+#2 /var/www/umka/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#8 {main}
+2016-11-25 00:53:13 [109.124.0.89][-][-][info][application] $_GET = [
+    'filter' => '{\"uid\":28}'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55798'
+    'REDIRECT_QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'filter={%22uid%22:28}'
+    'REQUEST_URI' => '/api/v1/main/test?filter={%22uid%22:28}'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480009993.932
+    'REQUEST_TIME' => 1480009993
+]
+2016-11-25 00:57:47 [109.124.0.89][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in /var/www/umka/api/modules/v1/controllers/ProfileController.php:36
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/ProfileController.php(36): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', '/var/www/umka/a...', 36, Array)
+#1 [internal function]: app\api\modules\v1\controllers\ProfileController->app\api\modules\v1\controllers\{closure}(Object(yii\rest\IndexAction))
+#2 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(54): call_user_func(Object(Closure), Object(yii\rest\IndexAction))
+#3 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(44): yii\rest\IndexAction->prepareDataProvider()
+#4 [internal function]: yii\rest\IndexAction->run()
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\Action->runWithParams(Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#8 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#9 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#11 {main}
+2016-11-25 00:57:47 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55830'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480010267.144
+    'REQUEST_TIME' => 1480010267
+]
+2016-11-25 01:03:33 [109.124.0.89][-][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: yii\web\Request::json' in /var/www/umka/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/MainController.php(50): yii\base\Component->__get('json')
+#1 [internal function]: app\api\modules\v1\controllers\MainController->actionTest()
+#2 /var/www/umka/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#8 {main}
+2016-11-25 01:03:33 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55843'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/main/test'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480010613.347
+    'REQUEST_TIME' => 1480010613
+]
+2016-11-25 01:04:00 [109.124.0.89][-][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: yii\web\Request::json' in /var/www/umka/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/MainController.php(50): yii\base\Component->__get('json')
+#1 [internal function]: app\api\modules\v1\controllers\MainController->actionTest()
+#2 /var/www/umka/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#5 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#8 {main}
+2016-11-25 01:04:00 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '10'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'chrome-extension://ehafadccdcdedbhcbddihehiodgcddpl'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55846'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/main/test'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480010640.289
+    'REQUEST_TIME' => 1480010640
+]
+2016-11-25 01:11:29 [109.124.0.89][-][-][error][yii\web\HttpException:415] exception 'yii\web\UnsupportedMediaTypeHttpException' with message 'None of your requested content types is supported.' in /var/www/umka/vendor/yiisoft/yii2/filters/ContentNegotiator.php:208
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/filters/ContentNegotiator.php(157): yii\filters\ContentNegotiator->negotiateContentType(Object(yii\web\Request), Object(yii\web\Response))
+#1 /var/www/umka/vendor/yiisoft/yii2/filters/ContentNegotiator.php(145): yii\filters\ContentNegotiator->negotiate()
+#2 /var/www/umka/vendor/yiisoft/yii2/base/ActionFilter.php(73): yii\filters\ContentNegotiator->beforeAction(Object(yii\base\InlineAction))
+#3 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Component.php(540): call_user_func(Array, Object(yii\base\ActionEvent))
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(269): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#6 /var/www/umka/vendor/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(152): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#8 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test', Array)
+#9 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test', Array)
+#10 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#12 {main}
+2016-11-25 01:11:29 [109.124.0.89][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_USER_AGENT' => 'curl/7.35.0'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_ACCEPT' => 'text/json'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '55903'
+    'REDIRECT_URL' => '/api/v1/main/test'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/main/test'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480011089.074
+    'REQUEST_TIME' => 1480011089
+]
+2016-11-25 01:52:43 [109.124.0.89][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: v1/main/test -d uid=28' in /var/www/umka/vendor/yiisoft/yii2/base/Controller.php:125
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('test -d uid=28', Array)
+#1 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/main/test -d...', Array)
+#2 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /var/www/umka/vendor/yiisoft/yii2/web/Application.php:112
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#2 {main}
+2016-11-25 01:52:43 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '56306'
+    'REDIRECT_URL' => '/api/v1/main/test -d uid=28'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/main/test%20-d%20uid=28'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480013563.652
+    'REQUEST_TIME' => 1480013563
+]
+2016-11-25 01:54:04 [109.124.0.89][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "v1/profiles/index".' in /var/www/umka/vendor/yiisoft/yii2/base/Module.php:462
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profiles/ind...', Array)
+#1 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /var/www/umka/vendor/yiisoft/yii2/web/Application.php:112
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#2 {main}
+2016-11-25 01:54:04 [109.124.0.89][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_USER_AGENT' => 'curl/7.35.0'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_ACCEPT' => '*/*'
+    'CONTENT_LENGTH' => '5'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '56309'
+    'REDIRECT_URL' => '/api/v1/profiles/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles/index'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480013644.763
+    'REQUEST_TIME' => 1480013644
+]
+2016-11-25 01:59:45 [109.124.0.89][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: uid' in /var/www/umka/api/modules/v1/controllers/ProfileController.php:36
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/ProfileController.php(36): yii\base\ErrorHandler->handleError(8, 'Undefined index...', '/var/www/umka/a...', 36, Array)
+#1 [internal function]: app\api\modules\v1\controllers\ProfileController->app\api\modules\v1\controllers\{closure}(Object(yii\rest\IndexAction))
+#2 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(54): call_user_func(Object(Closure), Object(yii\rest\IndexAction))
+#3 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(44): yii\rest\IndexAction->prepareDataProvider()
+#4 [internal function]: yii\rest\IndexAction->run()
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\Action->runWithParams(Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#8 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#9 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#11 {main}
+2016-11-25 01:59:45 [109.124.0.89][-][-][info][application] $_GET = [
+    'uid' => '28'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '56383'
+    'REDIRECT_QUERY_STRING' => 'uid=28'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'uid=28'
+    'REQUEST_URI' => '/api/v1/profiles?uid=28'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480013985.449
+    'REQUEST_TIME' => 1480013985
+]
+2016-11-25 02:11:51 [109.124.0.89][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: uid' in /var/www/umka/api/modules/v1/controllers/ProfileController.php:36
+Stack trace:
+#0 /var/www/umka/api/modules/v1/controllers/ProfileController.php(36): yii\base\ErrorHandler->handleError(8, 'Undefined index...', '/var/www/umka/a...', 36, Array)
+#1 [internal function]: app\api\modules\v1\controllers\ProfileController->app\api\modules\v1\controllers\{closure}(Object(yii\rest\IndexAction))
+#2 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(54): call_user_func(Object(Closure), Object(yii\rest\IndexAction))
+#3 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(44): yii\rest\IndexAction->prepareDataProvider()
+#4 [internal function]: yii\rest\IndexAction->run()
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\Action->runWithParams(Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#8 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#9 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#11 {main}
+2016-11-25 02:11:51 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '56403'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480014711.652
+    'REQUEST_TIME' => 1480014711
+]
+2016-11-25 02:13:25 [109.124.0.89][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'mb_strtoupper() expects parameter 1 to be string, array given' in /var/www/umka/vendor/yiisoft/yii2/db/QueryTrait.php:239
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mb_strtoupper()...', '/var/www/umka/v...', 239, Array)
+#1 /var/www/umka/vendor/yiisoft/yii2/db/QueryTrait.php(239): mb_strtoupper(Array)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/QueryTrait.php(182): yii\db\Query->filterCondition(Array)
+#3 /var/www/umka/api/modules/v1/controllers/ProfileController.php(39): yii\db\Query->andFilterWhere(Array)
+#4 [internal function]: app\api\modules\v1\controllers\ProfileController->app\api\modules\v1\controllers\{closure}(Object(yii\rest\IndexAction))
+#5 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(54): call_user_func(Object(Closure), Object(yii\rest\IndexAction))
+#6 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(44): yii\rest\IndexAction->prepareDataProvider()
+#7 [internal function]: yii\rest\IndexAction->run()
+#8 /var/www/umka/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#9 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\Action->runWithParams(Array)
+#10 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#11 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#12 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#14 {main}
+2016-11-25 02:13:25 [109.124.0.89][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_USER_AGENT' => 'curl/7.35.0'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_ACCEPT' => '*/*'
+    'CONTENT_LENGTH' => '6'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '56410'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480014805.206
+    'REQUEST_TIME' => 1480014805
+]
+2016-11-25 02:14:11 [109.124.0.89][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'mb_strtoupper() expects parameter 1 to be string, array given' in /var/www/umka/vendor/yiisoft/yii2/db/QueryTrait.php:239
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mb_strtoupper()...', '/var/www/umka/v...', 239, Array)
+#1 /var/www/umka/vendor/yiisoft/yii2/db/QueryTrait.php(239): mb_strtoupper(Array)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/QueryTrait.php(182): yii\db\Query->filterCondition(Array)
+#3 /var/www/umka/api/modules/v1/controllers/ProfileController.php(39): yii\db\Query->andFilterWhere(Array)
+#4 [internal function]: app\api\modules\v1\controllers\ProfileController->app\api\modules\v1\controllers\{closure}(Object(yii\rest\IndexAction))
+#5 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(54): call_user_func(Object(Closure), Object(yii\rest\IndexAction))
+#6 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(44): yii\rest\IndexAction->prepareDataProvider()
+#7 [internal function]: yii\rest\IndexAction->run()
+#8 /var/www/umka/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#9 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\Action->runWithParams(Array)
+#10 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#11 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#12 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#14 {main}
+2016-11-25 02:14:11 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '56411'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480014851.581
+    'REQUEST_TIME' => 1480014851
+]
+2016-11-25 02:31:37 [109.124.0.89][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "v1/profiles/index".' in /var/www/umka/vendor/yiisoft/yii2/base/Module.php:462
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profiles/ind...', Array)
+#1 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /var/www/umka/vendor/yiisoft/yii2/web/Application.php:112
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#2 {main}
+2016-11-25 02:31:37 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '56545'
+    'REDIRECT_URL' => '/api/v1/profiles/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles/index'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480015897.707
+    'REQUEST_TIME' => 1480015897
+]
+2016-11-25 02:36:59 [109.124.0.89][-][-][error][yii\web\HttpException:405] exception 'yii\web\MethodNotAllowedHttpException' with message 'Method Not Allowed. This url can only handle the following request methods: GET, HEAD.' in /var/www/umka/vendor/yiisoft/yii2/filters/VerbFilter.php:105
+Stack trace:
+#0 [internal function]: yii\filters\VerbFilter->beforeAction(Object(yii\base\ActionEvent))
+#1 /var/www/umka/vendor/yiisoft/yii2/base/Component.php(540): call_user_func(Array, Object(yii\base\ActionEvent))
+#2 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(269): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#3 /var/www/umka/vendor/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\rest\IndexAction))
+#4 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(152): yii\web\Controller->beforeAction(Object(yii\rest\IndexAction))
+#5 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#6 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#9 {main}
+2016-11-25 02:36:59 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_ORIGIN' => 'chrome-extension://ehafadccdcdedbhcbddihehiodgcddpl'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '56581'
+    'REDIRECT_URL' => '/api/v1/profile/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profile/index'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480016219.028
+    'REQUEST_TIME' => 1480016219
+]
+2016-11-25 03:04:40 [109.124.0.89][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'mb_strtoupper() expects parameter 1 to be string, array given' in /var/www/umka/vendor/yiisoft/yii2/db/QueryTrait.php:239
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mb_strtoupper()...', '/var/www/umka/v...', 239, Array)
+#1 /var/www/umka/vendor/yiisoft/yii2/db/QueryTrait.php(239): mb_strtoupper(Array)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/QueryTrait.php(182): yii\db\Query->filterCondition(Array)
+#3 /var/www/umka/api/modules/v1/controllers/ProfileController.php(39): yii\db\Query->andFilterWhere(Array)
+#4 [internal function]: app\api\modules\v1\controllers\ProfileController->app\api\modules\v1\controllers\{closure}(Object(yii\rest\IndexAction))
+#5 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(54): call_user_func(Object(Closure), Object(yii\rest\IndexAction))
+#6 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(44): yii\rest\IndexAction->prepareDataProvider()
+#7 [internal function]: yii\rest\IndexAction->run()
+#8 /var/www/umka/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#9 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\Action->runWithParams(Array)
+#10 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#11 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#12 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#14 {main}
+2016-11-25 03:04:39 [109.124.0.89][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_USER_AGENT' => 'curl/7.35.0'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_ACCEPT' => '*/*'
+    'CONTENT_LENGTH' => '16'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '56737'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480017879.975
+    'REQUEST_TIME' => 1480017879
+]
+2016-11-25 03:06:29 [109.124.0.89][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'json_decode() expects parameter 1 to be string, array given' in /var/www/umka/api/modules/v1/controllers/ProfileController.php:35
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'json_decode() e...', '/var/www/umka/a...', 35, Array)
+#1 /var/www/umka/api/modules/v1/controllers/ProfileController.php(35): json_decode(Array)
+#2 [internal function]: app\api\modules\v1\controllers\ProfileController->app\api\modules\v1\controllers\{closure}(Object(yii\rest\IndexAction))
+#3 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(54): call_user_func(Object(Closure), Object(yii\rest\IndexAction))
+#4 /var/www/umka/vendor/yiisoft/yii2/rest/IndexAction.php(44): yii\rest\IndexAction->prepareDataProvider()
+#5 [internal function]: yii\rest\IndexAction->run()
+#6 /var/www/umka/vendor/yiisoft/yii2/base/Action.php(92): call_user_func_array(Array, Array)
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\Action->runWithParams(Array)
+#8 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#9 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#10 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#12 {main}
+2016-11-25 03:06:29 [109.124.0.89][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_USER_AGENT' => 'curl/7.35.0'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_ACCEPT' => '*/*'
+    'CONTENT_LENGTH' => '16'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '56759'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480017989.709
+    'REQUEST_TIME' => 1480017989
+]
+2016-11-25 03:07:16 [109.124.0.89][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'test' in 'where clause'' in /var/www/umka/vendor/yiisoft/yii2/db/Command.php:900
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(900): PDOStatement->execute()
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'test' in 'where clause'
+The SQL being executed was: SELECT COUNT(*) FROM `profile` WHERE (`uid`='28') AND (`test`='test')' in /var/www/umka/vendor/yiisoft/yii2/db/Schema.php:631
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'test' in 'where clause'
+)
+
+2016-11-25 03:07:16 [109.124.0.89][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_USER_AGENT' => 'curl/7.35.0'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_ACCEPT' => '*/*'
+    'CONTENT_LENGTH' => '16'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '56760'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480018036.333
+    'REQUEST_TIME' => 1480018036
+]
+2016-11-25 04:14:41 [109.124.0.89][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'services.one_id' in 'where clause'' in /var/www/umka/vendor/yiisoft/yii2/db/Command.php:900
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(900): PDOStatement->execute()
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'services.one_id' in 'where clause'
+The SQL being executed was: SELECT COUNT(*) FROM `profile` WHERE (`is_master`=1) AND (`services`.`one_id`='ee215a634762af055aac350fa241555') AND (`uid`=28)' in /var/www/umka/vendor/yiisoft/yii2/db/Schema.php:631
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'services.one_id' in 'where clause'
+)
+
+2016-11-25 04:14:41 [109.124.0.89][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_USER_AGENT' => 'curl/7.35.0'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_ACCEPT' => '*/*'
+    'CONTENT_LENGTH' => '45'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '57611'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480022081.191
+    'REQUEST_TIME' => 1480022081
+]
+2016-11-25 05:02:34 [109.124.0.89][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'one_id' in 'where clause'' in /var/www/umka/vendor/yiisoft/yii2/db/Command.php:900
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(900): PDOStatement->execute()
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'one_id' in 'where clause'
+The SQL being executed was: SELECT COUNT(*) FROM `profile` WHERE `one_id`=''' in /var/www/umka/vendor/yiisoft/yii2/db/Schema.php:631
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'one_id' in 'where clause'
+)
+
+2016-11-25 05:02:33 [109.124.0.89][-][-][info][application] $_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_USER_AGENT' => 'curl/7.35.0'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_ACCEPT' => '*/*'
+    'CONTENT_LENGTH' => '45'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '58129'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480024953.994
+    'REQUEST_TIME' => 1480024953
+]
+2016-11-25 05:40:09 [109.124.0.89][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'one_id' in 'where clause'' in /var/www/umka/vendor/yiisoft/yii2/db/Command.php:900
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(900): PDOStatement->execute()
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'one_id' in 'where clause'
+The SQL being executed was: SELECT COUNT(*) FROM `profile` WHERE `one_id`=''' in /var/www/umka/vendor/yiisoft/yii2/db/Schema.php:631
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'one_id' in 'where clause'
+)
+
+2016-11-25 05:40:09 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '58553'
+    'REDIRECT_URL' => '/api/v1/profile/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profile/index'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480027209.945
+    'REQUEST_TIME' => 1480027209
+]
+2016-11-25 07:28:44 [109.124.0.89][-][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: app\models\ServicesSection::section' in /var/www/umka/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/BaseActiveRecord.php(286): yii\base\Component->__get('section')
+#1 /var/www/umka/vendor/yiisoft/yii2/base/ArrayableTrait.php(120): yii\db\BaseActiveRecord->__get('section')
+#2 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(292): yii\base\Model->toArray(Array, Array)
+#3 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(188): yii\rest\Serializer->serializeModels(Array)
+#4 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#5 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#6 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#7 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#8 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('', Array)
+#9 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/service', Array)
+#10 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#12 {main}
+2016-11-25 07:28:44 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '59467'
+    'REDIRECT_URL' => '/api/v1/service'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/service'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480033724.558
+    'REQUEST_TIME' => 1480033724
+]
+2016-11-25 08:57:59 [109.124.0.89][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'app\models\ServicesSections' not found' in /var/www/umka/models/Profile.php:143
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-11-25 08:57:59 [109.124.0.89][-][-][info][application] $_GET = [
+    'id' => '7'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '60533'
+    'REDIRECT_URL' => '/api/v1/profiles/7'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles/7'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480039079.218
+    'REQUEST_TIME' => 1480039079
+]
+2016-11-25 09:06:44 [109.124.0.89][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'services.one_id' in 'where clause'' in /var/www/umka/vendor/yiisoft/yii2/db/Command.php:900
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(900): PDOStatement->execute()
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'services.one_id' in 'where clause'
+The SQL being executed was: SELECT COUNT(*) FROM `profile` WHERE (`is_master`=1) AND (`services`.`one_id`='3b40601f0d43290d5733213c671941cd')' in /var/www/umka/vendor/yiisoft/yii2/db/Schema.php:631
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'services.one_id' in 'where clause'
+)
+
+2016-11-25 09:06:44 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '60590'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480039604.085
+    'REQUEST_TIME' => 1480039604
+]
+2016-11-25 09:07:49 [109.124.0.89][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'one_id' in 'where clause'' in /var/www/umka/vendor/yiisoft/yii2/db/Command.php:900
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(900): PDOStatement->execute()
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'one_id' in 'where clause'
+The SQL being executed was: SELECT COUNT(*) FROM `profile` WHERE `one_id`='3b40601f0d43290d5733213c671941cd'' in /var/www/umka/vendor/yiisoft/yii2/db/Schema.php:631
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'one_id' in 'where clause'
+)
+
+2016-11-25 09:07:49 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '60594'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480039669.675
+    'REQUEST_TIME' => 1480039669
+]
+2016-11-25 09:11:27 [109.124.0.89][-][-][error][yii\base\InvalidParamException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: app\models\Profile::getrel_profile_sections()' in /var/www/umka/vendor/yiisoft/yii2/base/Component.php:285
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/BaseActiveRecord.php(1177): yii\base\Component->__call('getrel_profile_...', Array)
+#1 /var/www/umka/vendor/yiisoft/yii2/db/BaseActiveRecord.php(1177): app\models\Profile->getrel_profile_sections()
+#2 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(525): yii\db\BaseActiveRecord->getRelation('rel_profile_sec...')
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(440): yii\db\ActiveQuery->joinWithRelations(Object(app\models\Profile), Array, 'LEFT JOIN')
+#4 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(146): yii\db\ActiveQuery->buildJoinWith()
+#5 /var/www/umka/vendor/yiisoft/yii2/db/QueryBuilder.php(90): yii\db\ActiveQuery->prepare(Object(yii\db\mysql\QueryBuilder))
+#6 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(319): yii\db\QueryBuilder->build(Object(app\models\ProfileQuery))
+#7 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(389): yii\db\ActiveQuery->createCommand(NULL)
+#8 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#9 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#10 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#11 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#12 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#13 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#14 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#15 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#16 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#17 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#18 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#19 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#20 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#21 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#22 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#24 {main}
+
+Next exception 'yii\base\InvalidParamException' with message 'app\models\Profile has no relation named "rel_profile_sections".' in /var/www/umka/vendor/yiisoft/yii2/db/BaseActiveRecord.php:1180
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(525): yii\db\BaseActiveRecord->getRelation('rel_profile_sec...')
+#1 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(440): yii\db\ActiveQuery->joinWithRelations(Object(app\models\Profile), Array, 'LEFT JOIN')
+#2 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(146): yii\db\ActiveQuery->buildJoinWith()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/QueryBuilder.php(90): yii\db\ActiveQuery->prepare(Object(yii\db\mysql\QueryBuilder))
+#4 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(319): yii\db\QueryBuilder->build(Object(app\models\ProfileQuery))
+#5 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(389): yii\db\ActiveQuery->createCommand(NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#7 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#8 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#10 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#11 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#12 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#14 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#16 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#18 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#19 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#20 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#22 {main}
+2016-11-25 09:11:27 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '60613'
+    'REDIRECT_URL' => '/api/v1/profiles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profiles'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480039887.864
+    'REQUEST_TIME' => 1480039887
+]
+2016-11-25 09:55:20 [109.124.0.89][-][-][error][yii\db\IntegrityException] exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'one_id' in where clause is ambiguous' in /var/www/umka/vendor/yiisoft/yii2/db/Command.php:900
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(900): PDOStatement->execute()
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\IntegrityException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'one_id' in where clause is ambiguous
+The SQL being executed was: SELECT COUNT(*) FROM `profile` LEFT JOIN `rel_profile_section` ON `profile`.`id` = `rel_profile_section`.`profile_id` LEFT JOIN `services_section` ON `rel_profile_section`.`section_one_id` = `services_section`.`one_id` LEFT JOIN `rel_profile_service` ON `profile`.`id` = `rel_profile_service`.`profile_id` LEFT JOIN `service` ON `rel_profile_service`.`service_one_id` = `service`.`one_id` WHERE `one_id`='3b40601f0d43290d5733213c671941cd'' in /var/www/umka/vendor/yiisoft/yii2/db/Schema.php:631
+Stack trace:
+#0 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 /var/www/umka/vendor/yiisoft/yii2/db/Command.php(388): yii\db\Command->queryInternal('fetchColumn', 0)
+#2 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(396): yii\db\Command->queryScalar()
+#3 /var/www/umka/vendor/yiisoft/yii2/db/ActiveQuery.php(334): yii\db\Query->queryScalar('COUNT(*)', NULL)
+#4 /var/www/umka/vendor/yiisoft/yii2/db/Query.php(303): yii\db\ActiveQuery->queryScalar('COUNT(*)', NULL)
+#5 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(165): yii\db\Query->count('*', NULL)
+#6 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(147): yii\data\ActiveDataProvider->prepareTotalCount()
+#7 /var/www/umka/vendor/yiisoft/yii2/data/ActiveDataProvider.php(105): yii\data\BaseDataProvider->getTotalCount()
+#8 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#9 /var/www/umka/vendor/yiisoft/yii2/data/BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#10 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#11 /var/www/umka/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#12 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(97): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#13 /var/www/umka/vendor/yiisoft/yii2/rest/Controller.php(75): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#14 /var/www/umka/vendor/yiisoft/yii2/base/Controller.php(156): yii\rest\Controller->afterAction(Object(yii\rest\IndexAction), Object(yii\data\ActiveDataProvider))
+#15 /var/www/umka/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('index', Array)
+#16 /var/www/umka/vendor/yiisoft/yii2/web/Application.php(100): yii\base\Module->runAction('v1/profile/inde...', Array)
+#17 /var/www/umka/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/umka/api/index.php(13): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1052
+    [2] => Column 'one_id' in where clause is ambiguous
+)
+
+2016-11-25 09:55:20 [109.124.0.89][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.1590387369.1478674864'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '109.124.0.89:86'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_ga=GA1.1.1590387369.1478674864'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at 109.124.0.89 Port 86</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => '109.124.0.89'
+    'SERVER_ADDR' => '109.124.0.89'
+    'SERVER_PORT' => '86'
+    'REMOTE_ADDR' => '109.124.0.89'
+    'DOCUMENT_ROOT' => '/var/www/umka/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/umka/'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/umka/api/index.php'
+    'REMOTE_PORT' => '33025'
+    'REDIRECT_URL' => '/api/v1/profile/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/api/v1/profile/index'
+    'SCRIPT_NAME' => '/api/index.php'
+    'PHP_SELF' => '/api/index.php'
+    'REQUEST_TIME_FLOAT' => 1480042520.121
+    'REQUEST_TIME' => 1480042520
+]
