@@ -30,8 +30,9 @@ class ServiceSpec extends \yii\db\ActiveRecord
     {
         return [
             'id',
-            'one_id' => function($model){
-                return md5($model->id. $model->spec_name);
+            'one_id',
+            'layer' => function () {
+                return 'specs';
             },
             'spec_name',
             'description',
@@ -49,7 +50,8 @@ class ServiceSpec extends \yii\db\ActiveRecord
             [['spec_name'], 'required'],
             [['service', 'sort'], 'integer'],
             [['spec_name', 'description', 'picture'], 'string', 'max' => 255],
-            [['color'], 'string', 'max' => 6],
+            [['color'], 'string', 'max' => 7],
+            [['one_id'], 'string', 'max' => 32],
             [['service'], 'exist', 'skipOnError' => true, 'targetClass' => Service::className(), 'targetAttribute' => ['service' => 'id']],
         ];
     }
@@ -78,6 +80,14 @@ class ServiceSpec extends \yii\db\ActiveRecord
         return $this->hasOne(Service::className(), ['id' => 'service']);
     }
 
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            $this->one_id = md5($this->id. $this->spec_name);
+            return true;
+        }
+        return false;
+    }
     /**
      * @inheritdoc
      * @return ServiceSpecQuery the active query used by this AR class.
