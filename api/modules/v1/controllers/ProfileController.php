@@ -14,6 +14,7 @@ class ProfileController extends ActiveController
 
     public function actions()
     {
+        $uid = $_GET['uid'];
         return [
             'index' => [
                 'class' => 'yii\rest\IndexAction',
@@ -24,6 +25,7 @@ class ProfileController extends ActiveController
                    return new ActiveDataProvider([
                         'query' => $modelClass::find()->andFilterWhere([
                             'is_master' => 1,
+                            'uid' => $uid,
                         ]),
                        'pagination' => [
                             'pageSize' => 10,
