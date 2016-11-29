@@ -41,47 +41,18 @@ class MainController extends Controller
         $model->validate();
             return $model;
     }    
-    public function actionTest()
-    {
-/*$products = Product::listAllByCategoryId($category_id,
-            'id, name, category_id, price, featured_price, image_small, short_description')->all();
-*/
-            
-                
-                   //$modelClass = $this->modelClass;
-                   $request = Yii::$app->request;
-                   $params = $request->bodyParams;
-                   //$param = $request->getBodyParam('data');
-                   //return 'test';
-                   //return Yii::$app->request->bodyParams;
-                   
-                   $query = Profile::find()->andFilterWhere([
-                            'is_master' => 1,
-                       ]);
-                   //if(Yii::$app->request->getBodyParam('level') && Yii::$app->request->getBodyParam('one_id'))
-                   //{}
-                        $level = Yii::$app->request->getBodyParam('level');
-                        $one_id = Yii::$app->request->getBodyParam('one_id');
-                     //   $query->joinWith([$level])->where(['one_id'=>$one_id]);
-                   
-                   //вывод по категориям 
-                   //curl -X GET http://localhost:86/api/v1/profile/index -d level=services -d one_id=cc2685f55383a82c4f390240b1389979
-                return new ActiveDataProvider([
-                        'query' => $query,
-                        'pagination' => [
-                            'pageSize' => 10,
-                        ],
-                   ]);
-    }
+    
     public function actionListServiceProfiles($level = null, $one_id = null, $gender = null)
         {
             $query = Profile::find()->andFilterWhere([
                             'is_master' => 1,
                        ]);
-            if($gender) $query->andFilterWhere([
+            $query->joinWith([$level])->where(['one_id'=>$one_id]);
+            if(!is_null($gender)) $query->andFilterWhere([
                             'like', 'gender', $gender
                        ]);
-            $query->joinWith([$level])->where(['one_id'=>$one_id]);
+            
+            //return $gender;
             return new ActiveDataProvider([
                 'query' => $query,
                 'pagination' => [
