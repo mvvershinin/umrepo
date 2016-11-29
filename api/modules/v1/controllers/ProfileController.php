@@ -17,7 +17,7 @@ class ProfileController extends ActiveController
     {
         
         return [
-            'index' => [
+            'list' => [
                 'class' => 'yii\rest\IndexAction',
                 'modelClass' => $this->modelClass,
                 'checkAccess' => [$this, 'checkAccess'],
@@ -32,10 +32,17 @@ class ProfileController extends ActiveController
                    
                    $query = $modelClass::find()->andFilterWhere([
                             'is_master' => 1,
-                       ]);//->joinWith(['sections' ])->where(['one_id'=>'3b40601f0d43290d5733213c671941cd']);
-                       
-                   //$query->joinWith(['sections' ])->where(['one_id'=>'3b40601f0d43290d5733213c671941cd']);
-                   $query->joinWith(['services' ])->where(['one_id'=>'8fd77622d1853592f51d47633c9a880f']);
+                       ]);
+                   //if(Yii::$app->request->getBodyParam('level') && Yii::$app->request->getBodyParam('one_id'))
+                   //{}
+                        $level = Yii::$app->request->getBodyParam('level');
+                        $one_id = Yii::$app->request->getBodyParam('one_id');
+                        $query->joinWith([$level])->where(['one_id'=>$one_id]);
+                   
+                   //вывод по категориям 
+                   //curl -X GET http://localhost:86/api/v1/profile/index -d level=services -d one_id=cc2685f55383a82c4f390240b1389979
+
+
                    return new ActiveDataProvider([
                         'query' => $query,
                         'pagination' => [
@@ -49,7 +56,7 @@ class ProfileController extends ActiveController
                 'modelClass' => $this->modelClass,
                 'checkAccess' => [$this, 'checkAccess'],
             ],
-            'index2' => [
+            'index3' => [
                 'class' => 'yii\rest\IndexAction',
                 'modelClass' => $this->modelClass,
                 'checkAccess' => [$this, 'checkAccess'],
@@ -66,5 +73,6 @@ class ProfileController extends ActiveController
                  }
             ],
         ];
-    }                
+    } 
+    
 }

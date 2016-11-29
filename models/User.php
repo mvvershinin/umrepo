@@ -66,6 +66,11 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function rules()
     {
         return [
+            ['phone', 'trim'],
+            ['phone', 'required'],
+            ['phone', 'string', 'length' => 11],
+            ['phone', 'unique', 'message' => 'Телефон занят'],
+            
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];

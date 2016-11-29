@@ -59,6 +59,9 @@ class Profile extends \yii\db\ActiveRecord
             'services' => function ($model) {
                 return array_merge($model->sections, $model->services);
             },
+            'servicesPrice' => function ($model) {
+                return $model->servicesPrice;
+            },
             /*'servicesPrice' => function ($model) {
                 return $model->servicesPrice;
             },
@@ -148,86 +151,46 @@ class Profile extends \yii\db\ActiveRecord
         return $this->hasMany(Service::className(), ['one_id' => 'service_one_id'])
              ->viaTable('{{%rel_profile_service}}', ['profile_id' => 'id']);
     }
-    /*
-    public function getServices()
+    public function getSpecs()
     {
-        if($this->firstname == 'Лаврентий'){
-            return [['one_id' => 'ee215a634762af055aac350fa241555', 'service_name' => 'Уникаольный чувак',]];
-        }else 
-        return [
-            ['one_id' => 'ee215a634762af055aac350fa2415994', 'service_name' => 'Парикмахер',],
-            ['one_id' => '8db7293433ce1ed9d520b2d46125d25a', 'service_name' => 'Маникюр',],
-            ['one_id' => '0bc8d6eb501070024cb5e6e919cdc558', 'service_name' => 'Педикюр',],    
-            ]
-            ;
+        return $this->hasMany(ServiceSpec::className(), ['one_id' => 'spec_one_id'])
+             ->viaTable('{{%rel_profile_spec}}', ['profile_id' => 'id']);
     }
-     * 
-     */
+
+    
     public function getServicesPrice()
     {
         return ([
                 [   'one_id' => 'ee215a634762af055aac350fa2415994',
-                    'test' => Yii::$app->request->userIP,
                     'service_name' => 'Парикмахер',
                     'types' => [
-                            ['job_id' => [
+                            [
                                  'description' => 'Описание пункта по услуге 1',
                                  'type_price' => 100,
                                  'type_quantity' => 90,
                                  'type_unit' => 'минут',
-                             ]],
-                            ['job_id' => [
+                            ],
+                            [
                                  'description' => 'Описание пункта по услуге 2',
                                  'type_price' => 100,
                                  'type_quantity' => 60,
                                  'type_unit' => 'минут',
-                             ]],
-                            ['job_id' => [
+                             ],
+                            [
                               'description' => 'Описание пункта по услуге 3',
                               'type_price' => 100,
                               'type_quantity' => 90,
                               'type_unit' => 'минут',
-                          ]],
+                            ],
                     ],
                 ],  
             [   'one_id' => '8db7293433ce1ed9d520b2d46125d25a',
-                    'service_name' => 'Маникюр',],
+                    'service_name' => 'Наименование услуги',],
             [   'one_id' => '0bc8d6eb501070024cb5e6e919cdc558',
-                    'service_name' => 'Педикюр',],
+                    'service_name' => 'Наименование услуги',],
              ]);
     }
-    public function getTestexpand()
-    {
-        return ([
-                [   'one_id' => 'test',
-                    'service_name' => 'Парикмахер',
-                    'types' => [
-                            ['job_id' => [
-                                 'description' => 'Описание пункта по услуге 1',
-                                 'type_price' => 100,
-                                 'type_quantity' => 90,
-                                 'type_unit' => 'минут',
-                             ]],
-                            ['job_id' => [
-                                 'description' => 'Описание пункта по услуге 2',
-                                 'type_price' => 100,
-                                 'type_quantity' => 60,
-                                 'type_unit' => 'минут',
-                             ]],
-                            ['job_id' => [
-                              'description' => 'Описание пункта по услуге 3',
-                              'type_price' => 100,
-                              'type_quantity' => 90,
-                              'type_unit' => 'минут',
-                          ]],
-                    ],
-                ],  
-            [   'one_id' => '8db7293433ce1ed9d520b2d46125d25a',
-                    'service_name' => 'Маникюр',],
-            [   'one_id' => '0bc8d6eb501070024cb5e6e919cdc558',
-                    'service_name' => 'Педикюр',],
-             ]);
-    }
+
     public function getUserPhone()
     {
         return $this->user->phone;

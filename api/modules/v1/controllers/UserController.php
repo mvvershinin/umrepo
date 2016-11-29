@@ -7,7 +7,7 @@ use yii\filters\auth\HttpBearerAuth;
 
 class UserController extends ActiveController
 {
- 
+//'test' => Yii::$app->request->userIP,
     public $modelClass = 'app\models\User';
  /*
     public function behaviors()

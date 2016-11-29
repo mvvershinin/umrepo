@@ -39,7 +39,7 @@ $config = [
                     'controller'  => [
                         'v1/profile',
                     ],
-                    'except' => ['delete', 'update', 'create'],
+                    'except' => ['delete'],
                 ],
                 [
                     'class'  => 'yii\rest\UrlRule',
@@ -56,7 +56,9 @@ $config = [
             'enableCookieValidation' => false,
             /*'parsers' => [
                 'application/json'  => 'yii\web\JsonParser',
-            ]*/
+            ]
+             * 
+             */
         ],
         'cache'  => [
             'class'  => 'yii\caching\FileCache',
