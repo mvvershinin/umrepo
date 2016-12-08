@@ -11,9 +11,10 @@ use app\models\Profile;
 use yii\web\JsonParser;
 use yii\web\Request;
 
+
 class MainController extends Controller 
 {
-
+    
     
     public function actionLogin()
     {
@@ -89,8 +90,9 @@ class MainController extends Controller
                 ],
             ]);
         }    
-    public function actionTest($pass, $hash) {
-        return Yii::$app->getSecurity()->validatePassword($pass, $hash);
+    public function actionTest() {
+        return Yii::$app->user->getId();
+        
         
     }    
 }

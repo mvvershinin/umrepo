@@ -57,7 +57,7 @@ class Profile extends \yii\db\ActiveRecord
             'work_place_id',
             
             'services' => function ($model) {
-                return array_merge($model->sections, $model->services);
+                return array_merge($model->sections, $model->services, $model->specs);
             },
             'servicesPrice' => function ($model) {
                 return $model->servicesPrice;

@@ -25,7 +25,7 @@ $config = [
         'urlManager'  => [
             'enablePrettyUrl'  => true,
             'showScriptName'  => false,
-            'enableStrictParsing' => true,
+            'enableStrictParsing' => false,
             'rules' => [
                 [
                     'class'  => 'yii\rest\UrlRule',
@@ -52,6 +52,14 @@ $config = [
                     'class'  => 'yii\rest\UrlRule',
                     'controller'  => [
                         'v1/main',
+                    ],
+                ],
+                [
+                    'class'  => 'yii\rest\UrlRule',
+                    'controller'  => [
+                        'v1/rel-profile-section',
+                        'v1/rel-profile-service',
+                        'v1/rel-profile-spec',
                     ],
                 ],
             ],
