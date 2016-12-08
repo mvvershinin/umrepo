@@ -200,6 +200,10 @@ class Profile extends \yii\db\ActiveRecord
         $stars = rand(10, 50)/10;
         return ['stars' => $stars, 'num_votes' => rand(10, 150)];
     }
+    public static function findByUid($uid)
+    {
+        return static::findOne(['uid' => $uid]);
+    }
     public function search($params)
     {
         $query = Profile::find();

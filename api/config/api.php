@@ -25,7 +25,7 @@ $config = [
         'urlManager'  => [
             'enablePrettyUrl'  => true,
             'showScriptName'  => false,
-            'enableStrictParsing' => false,
+            'enableStrictParsing' => true,
             'rules' => [
                 [
                     'class'  => 'yii\rest\UrlRule',
@@ -44,8 +44,14 @@ $config = [
                 [
                     'class'  => 'yii\rest\UrlRule',
                     'controller'  => [
+                        'v1/signup',
+                    ],
+                    'except' => ['delete', 'view', 'update'],
+                ],
+                [
+                    'class'  => 'yii\rest\UrlRule',
+                    'controller'  => [
                         'v1/main',
-                        'v1/user',
                     ],
                 ],
             ],
@@ -54,11 +60,12 @@ $config = [
             // Set Parser to JsonParser to accept Json in request
             //'class' => '\yii\web\Request',
             'enableCookieValidation' => false,
-            /*'parsers' => [
+            
+            'parsers' => [
                 'application/json'  => 'yii\web\JsonParser',
             ]
-             * 
-             */
+             
+            
         ],
         'cache'  => [
             'class'  => 'yii\caching\FileCache',
@@ -75,7 +82,7 @@ $config = [
             'targets'  => [
                 [
                     'class'  => 'yii\log\FileTarget',
-                    'levels'  => ['error', 'warning'],
+                    'levels'  => ['error'],//, 'warning'],
                     // maintain api logs in api directory
                     'logFile'  => '@api/runtime/logs/error.log'
                 ],

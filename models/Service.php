@@ -101,8 +101,6 @@ class Service extends \yii\db\ActiveRecord
     public function getSectionName()
     {
         return ServicesSection::findOne($this->section)->section_name;
-         
-        
     }
 
     /**

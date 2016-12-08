@@ -56,6 +56,12 @@ class ProfileController extends ActiveController
                 'modelClass' => $this->modelClass,
                 'checkAccess' => [$this, 'checkAccess'],
             ],
+            'update' => [
+                'class' => 'yii\rest\UpdateAction',
+                'modelClass' => $this->modelClass,
+                'checkAccess' => [$this, 'checkAccess'],
+                'scenario' => $this->updateScenario,
+            ],
             'index3' => [
                 'class' => 'yii\rest\IndexAction',
                 'modelClass' => $this->modelClass,

@@ -7,6 +7,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use app\models\Profile;
 /**
  * User model
  *
@@ -54,7 +55,10 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'id',
             'username',
             'email',
-            'phone'
+            'phone',
+            'profile' => function ($model) {
+                return $model->profiles->id;
+            }
             /*
             'name' => function ($model) {
                 return $model->first_name . ' ' . $model->last_name;
@@ -82,6 +86,10 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     {
         return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
     }
+    public static function findByPhone($phone)
+    {
+        return static::findOne(['phone' => $phone]);
+    }
     /**
      * @inheritdoc
      */
@@ -97,13 +105,14 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      * @return static|null
      */
     public static function findByIdentity($identity)
-    {/*
+    {
         if ($user = static::findOne(['phone' => $identity, 'status' => self::STATUS_ACTIVE])) {
             return $user;
-        }*/
+        }
+        /*
         if ($user = static::findOne(['email' => $identity, 'status' => self::STATUS_ACTIVE])) {
             return $user;
-        }/*
+        }
         if ($user = static::findOne(['username' => $identity, 'status' => self::STATUS_ACTIVE])) {
             return $user;
         }*/
@@ -210,5 +219,100 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+ /*   
+    public function signup()//$phone)
+    {
+        $params = Yii::$app->getRequest()->getBodyParams();
+        $phone = $params['phone'];
+        $user = new User();
+        $user->username = 'umka'.$phone;
+        $user->email = $phone .'@umka.ru';
+        $user->phone = $phone;
+        //$user->password = '7777';
+        $user->setPassword('7777');
+        $user->generateAuthKey();
+        if (!$user->validate()) {
+            return null;
+        }
+        return $user->save() ? $user : null;
+    }
+*/  public function signup()//$phone)
+    {
+        $params = Yii::$app->getRequest()->getBodyParams();
+        $phone = $params['phone'];
+        $user = new User();
+        $user->username = 'umka'.$phone;
+        $user->email = $phone .'@umka.ru';
+         
+        $user->phone = $phone;
+          
+         
+        //$user->password = '7777';
+        $user->setPassword('7777');
+        $user->generateAuthKey();
+        if (!$user->validate()) {
+            return $user->validate();
+        }
+        
+        
+        return $user->save() ? $user : null;
+    }
+    
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            //$this->one_id = md5($this->id. $this->serv_name);
+/*            
+            $params = Yii::$app->getRequest()->getBodyParams();
+            $phone = $params['phone'];
+            
+            $this->username = 'umka'.$phone;
+            $this->email = $phone .'@umka.ru';
+            $this->phone = $phone;
+            //$user->password = '7777';
+            $this->setPassword('7777');
+            $this->generateAuthKey();
+            return $phone;
+ * 
+ */
+            return true;
+        }
+        return false;
+    }
+    
+    public function afterSave($insert,$changedAtrr) {
+            
+            if($insert){  
+            $model = new Profile;
+            $model->uid = $this->id;
+            //$model->avatar = md5($model->uid. time()) . '.jpg';
+            $model->firstname = '';
+            $model->patronymic = '';
+            
+            $model->gender = 'мужской';
+            
+            $model->is_master = true;
+            $model->location_place_id = 70;
+            $model->work_place_id = 70;
+            $model->save();
+            }
+            parent::afterSave($insert,$changedAtrr);
+            /* else {
+             * 
+             Profile::model()->updateAll(array( 'uid' =>$this->id, 
+                                                'name' => $this->name,    
+                                                'first_name'=>$this->first_name,
+                                                'description'=>$this->description
+                    ), 'user_id=:user_id', array(':user_id'=> $this->id));
+            }*/
+        }
+    public function getProfiles()
+    {
+        return $this->hasOne(Profile::className(), ['uid' => 'id']);
+    }
+    public function getProfile()
+    {
+         return $this->profiles->id;
     }
 }
