@@ -55,7 +55,6 @@ class Profile extends \yii\db\ActiveRecord
             'is_master',
             'location_place_id',
             'work_place_id',
-            
             'services' => function ($model) {
                 return array_merge($model->sections, $model->services, $model->specs);
             },
@@ -104,13 +103,14 @@ class Profile extends \yii\db\ActiveRecord
             //[['uid', 'avatar', 'firstname', 'lastname', 'gender', 'location_place_id', 'work_place_id'], 'required'],
             //[['uid', 'is_master', 'location_place_id', 'work_place_id'], 'integer'],
             [['about'], 'string'],
-            [['avatar'], 'string', 'max' => 255],
+            [['avatar'], 'file','extensions'=> ['jpg', 'jpeg', 'bmp', 'png']],
             [['firstname', 'patronymic', 'lastname'], 'string', 'max' => 100],
             [['gender'], 'string', 'max' => 10],
             //[['uid'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['uid' => 'id']],
-            [['section_ids'], 'each', 'rule' => ['integer']],
-            [['service_ids'], 'each', 'rule' => ['integer']],
-            [['spec_ids'], 'each', 'rule' => ['integer']],
+            //конфликтует поведение с добавлением основной информации, добавление реляции реалезовано отдельными методами
+            //[['section_ids'], 'each', 'rule' => ['integer']],
+            //[['service_ids'], 'each', 'rule' => ['integer']],
+            //[['spec_ids'], 'each', 'rule' => ['integer']],
         ];
     }
 

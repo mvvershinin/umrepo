@@ -60,6 +60,7 @@ $config = [
                         'v1/rel-profile-section',
                         'v1/rel-profile-service',
                         'v1/rel-profile-spec',
+                        'v1/profile-avatar',
                     ],
                 ],
             ],
@@ -68,10 +69,13 @@ $config = [
             // Set Parser to JsonParser to accept Json in request
             //'class' => '\yii\web\Request',
             'enableCookieValidation' => false,
-            
+
             'parsers' => [
                 'application/json'  => 'yii\web\JsonParser',
             ]
+
+              
+             
              
             
         ],
