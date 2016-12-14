@@ -32,9 +32,11 @@ class ServiceSpec extends \yii\db\ActiveRecord
             'id',
             'one_id',
             'layer' => function () {
-                return 'specs';
+                return 'spec';
             },
-            'spec_name',
+            'name'=> function () {
+                return $this->spec_name;
+            },
             'description',
             'sort',
             'picture',

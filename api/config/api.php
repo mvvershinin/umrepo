@@ -61,6 +61,7 @@ $config = [
                         'v1/rel-profile-service',
                         'v1/rel-profile-spec',
                         'v1/profile-avatar',
+                        'v1/profile-portfolio-item',
                     ],
                 ],
             ],

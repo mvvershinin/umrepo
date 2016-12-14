@@ -51,15 +51,17 @@ class Profile extends \yii\db\ActiveRecord
             },
             'gender',
             'about',
-            
             'is_master',
             'location_place_id',
             'work_place_id',
+            'portfolio_items' => function ($model) {
+                return $model->portfolioItems;
+            },
             'services' => function ($model) {
                 return array_merge($model->sections, $model->services, $model->specs);
             },
             'servicesPrice' => function ($model) {
-                return $model->servicesPrice;
+                return $model->priceItems;
             },
             /*'servicesPrice' => function ($model) {
                 return $model->servicesPrice;
@@ -101,7 +103,7 @@ class Profile extends \yii\db\ActiveRecord
     {
         return [
             //[['uid', 'avatar', 'firstname', 'lastname', 'gender', 'location_place_id', 'work_place_id'], 'required'],
-            //[['uid', 'is_master', 'location_place_id', 'work_place_id'], 'integer'],
+            [['is_master', 'location_place_id', 'work_place_id'], 'integer'],
             [['about'], 'string'],
             [['avatar'], 'file','extensions'=> ['jpg', 'jpeg', 'bmp', 'png']],
             [['firstname', 'patronymic', 'lastname'], 'string', 'max' => 100],
@@ -156,39 +158,14 @@ class Profile extends \yii\db\ActiveRecord
         return $this->hasMany(ServiceSpec::className(), ['one_id' => 'spec_one_id'])
              ->viaTable('{{%rel_profile_spec}}', ['profile_id' => 'id']);
     }
-
-    
-    public function getServicesPrice()
+    public function getPortfolioItems()
     {
-        return ([
-                [   'one_id' => 'ee215a634762af055aac350fa2415994',
-                    'service_name' => 'Парикмахер',
-                    'types' => [
-                            [
-                                 'description' => 'Описание пункта по услуге 1',
-                                 'type_price' => 100,
-                                 'type_quantity' => 90,
-                                 'type_unit' => 'минут',
-                            ],
-                            [
-                                 'description' => 'Описание пункта по услуге 2',
-                                 'type_price' => 100,
-                                 'type_quantity' => 60,
-                                 'type_unit' => 'минут',
-                             ],
-                            [
-                              'description' => 'Описание пункта по услуге 3',
-                              'type_price' => 100,
-                              'type_quantity' => 90,
-                              'type_unit' => 'минут',
-                            ],
-                    ],
-                ],  
-            [   'one_id' => '8db7293433ce1ed9d520b2d46125d25a',
-                    'service_name' => 'Наименование услуги',],
-            [   'one_id' => '0bc8d6eb501070024cb5e6e919cdc558',
-                    'service_name' => 'Наименование услуги',],
-             ]);
+        return $this->hasMany(ProfilePortfolioItem::className(), ['profileid' => 'id']);
+    }
+    
+    public function getPriceItems()
+    {
+        return $this->hasMany(ProfilePriceItem::className(), ['profileid' => 'id']);
     }
 
     public function getUserPhone()

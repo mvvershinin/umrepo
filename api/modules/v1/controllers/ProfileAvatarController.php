@@ -34,7 +34,7 @@ class ProfileAvatarController extends ActiveController
      public function actionCreate()
     {
         $model = ProfileAvatar::findByUid(Yii::$app->user->getId());
-        $profile = Profile::findByUid(Yii::$app->user->getId());
+        //$profile = Profile::findByUid(Yii::$app->user->getId());
         $image = UploadedFile::getInstanceByName('avatar');
         $model->avatar = $image;
         if ($model->validate(['avatar']) && $image) {

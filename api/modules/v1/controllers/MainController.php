@@ -77,6 +77,7 @@ class MainController extends Controller
             $query = Profile::find()->andFilterWhere([
                             'is_master' => 1,
                        ]);
+            $level = $level.'s';
             $query->joinWith([$level])->where(['one_id'=>$one_id]);
             if(!is_null($gender)) $query->andFilterWhere([
                             'like', 'gender', $gender

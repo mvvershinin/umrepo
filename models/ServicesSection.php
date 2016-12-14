@@ -34,9 +34,12 @@ class ServicesSection extends \yii\db\ActiveRecord
             'id',
             'one_id',
             'layer' => function () {
-                return 'sections';
+                return 'section';
             },
-            'section_name',
+            //'section_name',
+            'name'=> function () {
+                return $this->section_name;
+            },
             'description',
             'sort',
             'picture',

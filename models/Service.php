@@ -35,9 +35,11 @@ class Service extends \yii\db\ActiveRecord
             'id',
             'one_id',
             'layer'=> function () {
-                return 'services';
+                return 'service';
             },
-            'serv_name',
+            'name'=> function () {
+                return $this->serv_name;
+            },
             'description',
             'sort',
             'picture',
