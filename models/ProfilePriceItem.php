@@ -12,6 +12,7 @@ use Yii;
  * @property string $description
  * @property integer $price
  * @property string $currency
+ * @property string $symcur
  * @property integer $quantity
  * @property string $measure
  * @property string $serviceoneid
@@ -37,6 +38,7 @@ class ProfilePriceItem extends \yii\db\ActiveRecord
             [['profileid', 'price', 'quantity'], 'integer'],
             [['description'], 'string'],
             [['currency', 'measure'], 'string', 'max' => 30],
+            //[['symcur'], 'string', 'max' => 10],
             [['serviceoneid', 'servicelayer'], 'string', 'max' => 255],
         ];
     }
@@ -52,6 +54,7 @@ class ProfilePriceItem extends \yii\db\ActiveRecord
             'description' => 'Description',
             'price' => 'Price',
             'currency' => 'Currency',
+            'symcur' => 'Currency',
             'quantity' => 'Quantity',
             'measure' => 'Measure',
             'serviceoneid' => 'Serviceoneid',

@@ -63,6 +63,10 @@ class Profile extends \yii\db\ActiveRecord
             'servicesPrice' => function ($model) {
                 return $model->priceItems;
             },
+            'today_shedule_free' => function ($model) {
+                return $model->todayScheduleItems;
+            },
+            
             /*'servicesPrice' => function ($model) {
                 return $model->servicesPrice;
             },
@@ -139,6 +143,7 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+    
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'uid']);
@@ -167,6 +172,20 @@ class Profile extends \yii\db\ActiveRecord
     {
         return $this->hasMany(ProfilePriceItem::className(), ['profileid' => 'id']);
     }
+    public function getScheduleItems()
+    {
+        return $this->hasMany(ProfileScheduleItem::className(), ['profileid' => 'id']);
+    }
+    public function getTodayScheduleItems()
+    {
+//        return $this->hasMany(ProfileScheduleItem::className(), ['profileid' => 'id'])->where(['day' => '1481846400']);
+        date_default_timezone_set('UTC');
+        $time_one = date("Y-m-d 00:00:00", time());
+        return $this->hasMany(ProfileScheduleItem::className(), ['profileid' => 'id'])->where(['day' => strtotime($time_one)]);
+
+
+    }
+    
 
     public function getUserPhone()
     {

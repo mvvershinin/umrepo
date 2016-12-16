@@ -82,8 +82,6 @@ class MainController extends Controller
             if(!is_null($gender)) $query->andFilterWhere([
                             'like', 'gender', $gender
                        ]);
-            
-            //return $gender;
             return new ActiveDataProvider([
                 'query' => $query,
                 'pagination' => [
