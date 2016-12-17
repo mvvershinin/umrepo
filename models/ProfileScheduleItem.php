@@ -29,7 +29,7 @@ class ProfileScheduleItem extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['day', 'time', 'select'], 'required'],
+            [['day', 'time'], 'required'],
             [['profileid', 'select'], 'integer'],
             [['day'], 'safe'],
             //[['time'], 'string', 'max' => 11],
