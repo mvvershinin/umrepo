@@ -24,15 +24,32 @@ class ChatItem extends \yii\db\ActiveRecord
     {
         return 'chat_item';
     }
+/*
+    public function fields()
+    {
+        return [
 
+            'id'=> function ($model) {
+                return $model->id;
+            },
+            'fromprofileid',
+            'toprofileid',
+            'message',
+            'image',
+            'isread',
+            'datetime',
+                    
+        ];
+    }
+    
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id', 'datetime', 'fromprofileid', 'toprofileid', 'message', 'isread', 'image'], 'required'],
-            [['id', 'datetime', 'fromprofileid', 'toprofileid', 'isread'], 'integer'],
+            [['fromprofileid', 'toprofileid', 'message'], 'required'],
+            [['datetime', 'fromprofileid', 'toprofileid', 'isread'], 'integer'],
             [['message'], 'string'],
             [['image'], 'string', 'max' => 255],
         ];

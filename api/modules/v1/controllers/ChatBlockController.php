@@ -6,8 +6,8 @@ use Yii;
 use yii\rest\ActiveController;
 use yii\data\ActiveDataProvider; 
 use yii\filters\auth\HttpBearerAuth;
-use app\models\ProfilePortfolioItem;
 use app\models\Profile;
+use app\models\BlockTable;
 use \yii\web\UploadedFile;
 
 class ChatBlockController extends ActiveController
@@ -37,6 +37,7 @@ class ChatBlockController extends ActiveController
         $model->load(Yii::$app->getRequest()->getBodyParams(), '');
         $profile = Profile::findByUid(Yii::$app->user->getId());
         $model->blockedby = $profile->id;
+        $model->date =time();
         if ($model->save()) {
             return $model;
         }
@@ -44,8 +45,9 @@ class ChatBlockController extends ActiveController
     public function actionDelete()
     {
         $params = Yii::$app->getRequest()->getBodyParams();
-        return $params['t'];
-        //return $this->findModel($id)->delete();
+        $profileid = $params['profileid'];
+        $blockedby = Profile::findByUid(Yii::$app->user->getId());
+        return BlockTable::findBlock($profileid, $blockedby->id)->delete();
     }
 }
 

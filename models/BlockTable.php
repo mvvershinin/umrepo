@@ -48,4 +48,8 @@ class BlockTable extends \yii\db\ActiveRecord
             'date' => 'Date',
         ];
     }
+    public static function findBlock($profileid, $blockedby)
+    {
+        return static::findOne(['profileid' => $profileid, 'blockedby' => $blockedby]);
+    }
 }
