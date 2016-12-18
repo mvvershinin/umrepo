@@ -29,8 +29,8 @@ class BlockTable extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['profileid', 'blockedby', 'reason', 'date'], 'required'],
-            [['profileid', 'blockedby', 'date'], 'integer'],
+            [['profileid'], 'required'],
+            [['profileid', 'date'], 'integer'],
             [['reason'], 'string', 'max' => 255],
         ];
     }

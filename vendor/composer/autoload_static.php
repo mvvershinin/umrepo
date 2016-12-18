@@ -34,6 +34,10 @@ class ComposerStaticInit7c7d6d2dffd38996a94faae3928ece78
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'l' => 
+        array (
+            'linslin\\yii2\\curl\\' => 18,
+        ),
         'k' => 
         array (
             'kartik\\widgets\\' => 15,
@@ -157,6 +161,10 @@ class ComposerStaticInit7c7d6d2dffd38996a94faae3928ece78
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'linslin\\yii2\\curl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/linslin/yii2-curl',
         ),
         'kartik\\widgets\\' => 
         array (

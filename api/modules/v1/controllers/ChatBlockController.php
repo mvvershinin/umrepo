@@ -10,7 +10,7 @@ use app\models\ProfilePortfolioItem;
 use app\models\Profile;
 use \yii\web\UploadedFile;
 
-class ProfilePriceItemController extends ActiveController
+class ChatBlockController extends ActiveController
 {
  
     public $modelClass = 'app\models\BlockTable';
@@ -41,9 +41,11 @@ class ProfilePriceItemController extends ActiveController
             return $model;
         }
     }
-    public function actionDelete($id)
+    public function actionDelete()
     {
-        return $this->findModel($id)->delete();
+        $params = Yii::$app->getRequest()->getBodyParams();
+        return $params['t'];
+        //return $this->findModel($id)->delete();
     }
 }
 

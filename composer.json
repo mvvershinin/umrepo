@@ -21,7 +21,8 @@
         "voskobovich/yii2-many-many-behavior": "~3.0",
         "kartik-v/yii2-widgets": "*",
         "johnitvn/yii2-rbac-plus": "*",
-        "yiisoft/yii2-imagine": "^2.1"
+        "yiisoft/yii2-imagine": "^2.1",
+        "linslin/yii2-curl": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

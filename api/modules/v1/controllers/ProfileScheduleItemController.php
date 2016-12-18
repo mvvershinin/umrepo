@@ -56,6 +56,10 @@ class ProfileScheduleItemController extends ActiveController
             ],
         ]);
     }
+    public function actionDelete($id)
+    {
+        return $this->findModel($id)->delete();
+    }
 }
 
  
