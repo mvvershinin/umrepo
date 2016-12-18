@@ -50,7 +50,7 @@ class ChatItemController extends ActiveController
                        ])->orFilterWhere([
                             'toprofileid' => $profile->id,
                             'fromprofileid' => $params['toprofileid'],
-                       ]);
+                       ])->orderBy((['datetime' => SORT_DESC]));
         /*
                 ->where("fromprofileid = AND (status = 1 OR verified = 1) OR (social_account = 1 AND enable_social = 1)")
             ->all();
@@ -77,7 +77,18 @@ class ChatItemController extends ActiveController
         $model->isread = 0;
         $model->fromprofileid = $profile->id;
         $model->datetime = time();
-        //return $model;
+        /*
+        $image = UploadedFile::getInstanceByName('image');
+        $model->image = $image;
+        if ($model->validate(['image']) && $image) {
+            $dir = Yii::getAlias('../web/images/chat/');
+            $fileName = md5($model->image->baseName. time()) . '.' . $model->image->extension;
+            $model->image->saveAs($dir . $fileName);
+            $model->image = $fileName;
+        }
+         * 
+         */
+
         if ($model->save()) {
             return $model;
         }

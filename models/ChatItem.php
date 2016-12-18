@@ -51,7 +51,8 @@ class ChatItem extends \yii\db\ActiveRecord
             [['fromprofileid', 'toprofileid', 'message'], 'required'],
             [['datetime', 'fromprofileid', 'toprofileid', 'isread'], 'integer'],
             [['message'], 'string'],
-            [['image'], 'string', 'max' => 255],
+            [['image'], 'file','extensions'=> ['jpg', 'jpeg', 'bmp', 'png']],
+            //[['image'], 'string', 'max' => 255],
         ];
     }
 
