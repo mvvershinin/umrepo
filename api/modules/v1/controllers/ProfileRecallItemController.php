@@ -28,7 +28,7 @@ class ProfileRecallItemController extends ActiveController
     public function actions()
     {
         $actions = parent::actions();
-        unset($actions['index'], $actions['update'], $actions['create'], /*$actions['delete'],*/ $actions['view']);
+        unset($actions['index'], $actions['update'], $actions['create'], $actions['delete'], $actions['view']);
         return $actions;
     }
      public function actionCreate()
@@ -59,8 +59,7 @@ class ProfileRecallItemController extends ActiveController
     {
         $model = ProfileRecall::findByUid($id);
         $profile = Profile::findByUid(Yii::$app->user->getId());
-        //return $model;
-        //return $profile->id.'&&&'.$model->fromprofileid;
+        $params = Yii::$app->getRequest()->getBodyParams();
         if($profile->id !== $model->fromprofileid){
             return ['error'=>'you can change only own recall'];
         }
@@ -80,15 +79,14 @@ class ProfileRecallItemController extends ActiveController
     {
         $model = ProfileRecall::findByUid($id);
         $profile = Profile::findByUid(Yii::$app->user->getId());
-        //return $model;
-        //return $profile->id.'&&&'.$model->fromprofileid;
+        $params = Yii::$app->getRequest()->getBodyParams();
         if($profile->id !== $model->fromprofileid){
             return ['error'=>'you can delete only own recall'];
         }
         $model->load(Yii::$app->getRequest()->getBodyParams(), '');
         $last = ProfileRecall::findLast($params['profileid']);
         if(is_object($last)){
-            $model->recallcount = $last['recallcount'] - 1;
+            if($last['recallcount']>1) $model->recallcount = $last['recallcount'] - 1;
             $model->totalrating = ($last['totalrating'] - $params['rating'])/ $model->recallcount;
             
         }
