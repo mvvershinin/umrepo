@@ -49,6 +49,13 @@ class ChatBlockController extends ActiveController
         $blockedby = Profile::findByUid(Yii::$app->user->getId());
         return BlockTable::findBlock($profileid, $blockedby->id)->delete();
     }
+    public function actionCheck()
+    {
+        $params = Yii::$app->getRequest()->getBodyParams();
+        $blockedby = $params['profileid'];
+        $profileid = Profile::findByUid(Yii::$app->user->getId());
+        return BlockTable::findBlock($profileid, $blockedby);
+    }
 }
 
  

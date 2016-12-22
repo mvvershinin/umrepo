@@ -19,7 +19,8 @@ class MainController extends Controller
     public function actionLogin()
     {
         $model = new LoginForm();
-        Yii::$app->getRequest()->getBodyParams();
+        $params = Yii::$app->getRequest()->getBodyParams();
+        return Yii::$app->request->userIP;
         if ($model->load(Yii::$app->getRequest()->getBodyParams(), '') && $model->login()) {
             return [
                 'access_token' => Yii::$app->user->identity->getAuthKey(),

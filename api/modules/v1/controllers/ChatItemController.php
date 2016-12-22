@@ -77,7 +77,7 @@ class ChatItemController extends ActiveController
         $model->isread = 0;
         $model->fromprofileid = $profile->id;
         $model->datetime = time();
-        /*
+        
         $image = UploadedFile::getInstanceByName('image');
         $model->image = $image;
         if ($model->validate(['image']) && $image) {
@@ -86,8 +86,8 @@ class ChatItemController extends ActiveController
             $model->image->saveAs($dir . $fileName);
             $model->image = $fileName;
         }
-         * 
-         */
+         
+        
 
         if ($model->save()) {
             return $model;

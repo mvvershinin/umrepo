@@ -62,4 +62,8 @@ class RelProfileSection extends \yii\db\ActiveRecord
     {
         return $this->hasOne(ServicesSection::className(), ['one_id' => 'section_one_id']);
     }
+    public static function findById($id)
+    {
+        return static::findOne(['id' => $id]);
+    }
 }

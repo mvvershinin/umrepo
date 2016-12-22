@@ -28,7 +28,7 @@ class RelProfileSpecController extends ActiveController
     public function actions()
     {
         $actions = parent::actions();
-        unset($actions['index'], $actions['update'], $actions['create'], $actions['delete'], $actions['view']);
+        unset($actions['index'], /*$actions['update'],*/ $actions['create'], $actions['delete'], $actions['view']);
         return $actions;
     }
      public function actionCreate()
@@ -43,6 +43,16 @@ class RelProfileSpecController extends ActiveController
             return array_values($model->getFirstErrors())[0];
         }
         return $model;
+    }
+    public function actionDelete($id)
+    {
+        $model = RelProfileSpec::findById($id);
+        $profile = Profile::findByUid(Yii::$app->user->getId());
+        if($profile->id !== $model->profile_id){
+            return ['error'=>'you can delete only own recall'];
+        }
+
+        return $model->delete();
     }
     
 }

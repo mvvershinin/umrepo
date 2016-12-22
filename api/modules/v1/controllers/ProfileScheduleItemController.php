@@ -28,7 +28,7 @@ class ProfileScheduleItemController extends ActiveController
     public function actions()
     {
         $actions = parent::actions();
-        unset($actions['index'], $actions['update'], $actions['create'], /*$actions['delete'],*/ $actions['view']);
+        unset($actions['index'], /*$actions['update'],*/ $actions['create'], $actions['delete'], $actions['view']);
         return $actions;
     }
      public function actionCreate()
@@ -58,7 +58,14 @@ class ProfileScheduleItemController extends ActiveController
     }
     public function actionDelete($id)
     {
-        return $this->findModel($id)->delete();
+        $model = ProfileSheduleItem::findByUid($id);
+        $profile = Profile::findByUid(Yii::$app->user->getId());
+        if($profile->id !== $model->profileid){
+            return ['error'=>'you can delete only own'];
+        }
+        
+        return $model->delete();
+
     }
 }
 

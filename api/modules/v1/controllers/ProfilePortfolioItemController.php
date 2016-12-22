@@ -34,10 +34,14 @@ class ProfilePortfolioItemController extends ActiveController
      public function actionCreate()
     {
         //$model = new ProfilePortfolioItem;
+        $profile = Profile::findByUid(Yii::$app->user->getId()); 
+        if((!$profile->ispremium)&&($profile->portfolioCount>2)){
+            return ['error'=> 'only for premium'];
+        }
         $model = new $this->modelClass();
         $model->load(Yii::$app->getRequest()->getBodyParams(), '');
         //::findByUid(Yii::$app->user->getId())
-        $profile = Profile::findByUid(Yii::$app->user->getId());
+//        return $profile->portfolioCount;
         $model->profileid = $profile->id;
         $image = UploadedFile::getInstanceByName('image');
         //return $image;
@@ -53,6 +57,31 @@ class ProfilePortfolioItemController extends ActiveController
             return $model;
         }
     }
+    public function actionUpdate($id)
+    {
+        $model = ProfilePortfolioItem::findByUid($id);
+        $profile = Profile::findByUid(Yii::$app->user->getId());
+        if($profile->id !== $model->profileid){
+            return ['error'=>'you can change only own portfolio'];
+        }
+        $model->load(Yii::$app->getRequest()->getBodyParams(), '');
+        
+        if (!$model->save()) {
+            return array_values($model->getFirstErrors())[0];
+        }
+        return $model;
+    }
+    public function actionDelete($id)
+    {
+        $model = ProfilePortfolioItem::findByUid($id);
+        $profile = Profile::findByUid(Yii::$app->user->getId());
+        if($profile->id !== $model->profileid){
+            return ['error'=>'you can delete only own recall'];
+        }
+
+        return $model->delete();
+    }
+    
 }
 
  

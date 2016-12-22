@@ -44,4 +44,8 @@ class RelProfileSpec extends \yii\db\ActiveRecord
             'spec_one_id' => 'Spec One ID',
         ];
     }
+    public static function findById($id)
+    {
+        return static::findOne(['id' => $id]);
+    }
 }

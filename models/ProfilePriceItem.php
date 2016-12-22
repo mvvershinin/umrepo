@@ -65,4 +65,8 @@ class ProfilePriceItem extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Profile::className(), ['id' => 'profileid']);
     }
+    public static function findByUid($id)
+    {
+        return static::findOne(['id' => $id]);
+    }
 }

@@ -28,7 +28,7 @@ class ProfileAvatarController extends ActiveController
     public function actions()
     {
         $actions = parent::actions();
-        unset($actions['index'], $actions['update'], $actions['create'], $actions['delete'], $actions['view']);
+        unset(/*$actions['index'], $actions['update']*/ $actions['create']/*, $actions['delete']*/, $actions['view']);
         return $actions;
     }
      public function actionCreate()

@@ -65,4 +65,8 @@ class RelProfileService extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Service::className(), ['one_id' => 'service_one_id']);
     }
+    public static function findById($id)
+    {
+        return static::findOne(['id' => $id]);
+    }
 }

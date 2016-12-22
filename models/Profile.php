@@ -43,9 +43,10 @@ class Profile extends \yii\db\ActiveRecord
             'firstname',
             'patronymic',
             'lastname',
-            'rating'=> function ($model) {
-                return $model->raiting;
-            },
+            'ispremium',
+            /*'rating'=> function ($model) {
+                return ['stars' => $stars, 'num_votes' => rand(10, 150)];
+            },*/
             'phone' => function ($model) {
                 return $model->userPhone;
             },
@@ -176,16 +177,21 @@ class Profile extends \yii\db\ActiveRecord
     {
         return $this->hasMany(ProfileScheduleItem::className(), ['profileid' => 'id']);
     }
+    public function getRecallItems()
+    {
+        return $this->hasMany(ProfileRecall::className(), ['profileid' => 'id']);
+    }
     public function getTodayScheduleItems()
     {
-//        return $this->hasMany(ProfileScheduleItem::className(), ['profileid' => 'id'])->where(['day' => '1481846400']);
         date_default_timezone_set('UTC');
         $time_one = date("Y-m-d 00:00:00", time());
         return $this->hasMany(ProfileScheduleItem::className(), ['profileid' => 'id'])->where(['day' => strtotime($time_one)]);
-
-
     }
-    
+    public function getPortfolioCount()
+    {
+        return $this->hasMany(ProfilePortfolioItem::className(), ['profileid' => 'id'])->count();
+        
+    }    
 
     public function getUserPhone()
     {
