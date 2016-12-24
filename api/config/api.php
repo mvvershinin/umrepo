@@ -25,7 +25,6 @@ $config = [
         'sms' => [
             'class' => 'Zelenin\yii\extensions\Sms',
             'api_id' => '4C802C87-E702-B6CC-E1F3-AC9DB115467E',
-            
             'login' => '89539263080',
             'password' => 'faraway_3080'
         ],
