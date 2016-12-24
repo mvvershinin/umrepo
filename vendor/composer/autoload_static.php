@@ -78,6 +78,11 @@ class ComposerStaticInit7c7d6d2dffd38996a94faae3928ece78
         array (
             'cebe\\markdown\\' => 14,
         ),
+        'Z' => 
+        array (
+            'Zelenin\\yii\\extensions\\' => 23,
+            'Zelenin\\' => 8,
+        ),
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
@@ -289,6 +294,14 @@ class ComposerStaticInit7c7d6d2dffd38996a94faae3928ece78
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'Zelenin\\yii\\extensions\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zelenin/yii2-sms_ru',
+        ),
+        'Zelenin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zelenin/smsru/src',
         ),
         'Webmozart\\Assert\\' => 
         array (

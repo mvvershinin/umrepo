@@ -311,4 +311,13 @@ return array (
       '@linslin/yii2/curl' => $vendorDir . '/linslin/yii2-curl',
     ),
   ),
+  'zelenin/yii2-sms_ru' => 
+  array (
+    'name' => 'zelenin/yii2-sms_ru',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@Zelenin/yii/extensions' => $vendorDir . '/zelenin/yii2-sms_ru',
+    ),
+  ),
 );

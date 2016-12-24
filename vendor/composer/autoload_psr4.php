@@ -48,6 +48,8 @@ return array(
     'johnitvn\\rbacplus\\' => array($vendorDir . '/johnitvn/yii2-rbac-plus/src'),
     'johnitvn\\ajaxcrud\\' => array($vendorDir . '/johnitvn/yii2-ajaxcrud/src'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
+    'Zelenin\\yii\\extensions\\' => array($vendorDir . '/zelenin/yii2-sms_ru'),
+    'Zelenin\\' => array($vendorDir . '/zelenin/smsru/src'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),

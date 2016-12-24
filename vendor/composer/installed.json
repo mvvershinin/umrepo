@@ -4846,5 +4846,100 @@
             "restful",
             "yii2"
         ]
+    },
+    {
+        "name": "zelenin/smsru",
+        "version": "1.4.2",
+        "version_normalized": "1.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zelenin/sms_ru.git",
+            "reference": "945a303608da7b325a8bc77d0772db33bb5f79b2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zelenin/sms_ru/zipball/945a303608da7b325a8bc77d0772db33bb5f79b2",
+            "reference": "945a303608da7b325a8bc77d0772db33bb5f79b2",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2014-01-10 00:00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Zelenin\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aleksandr Zelenin",
+                "email": "aleksandr@zelenin.me",
+                "homepage": "http://zelenin.me",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP-класс для работы с api сервиса [sms.ru](http://sms.ru)",
+        "homepage": "https://github.com/zelenin/sms_ru",
+        "keywords": [
+            "api",
+            "sms",
+            "sms.ru"
+        ]
+    },
+    {
+        "name": "zelenin/yii2-sms_ru",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zelenin/yii2-sms_ru.git",
+            "reference": "8048d2ccefe31df7c46a3fb82b169b22acbb3280"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zelenin/yii2-sms_ru/zipball/8048d2ccefe31df7c46a3fb82b169b22acbb3280",
+            "reference": "8048d2ccefe31df7c46a3fb82b169b22acbb3280",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0",
+            "yiisoft/yii2": "*",
+            "zelenin/smsru": "1.4.2"
+        },
+        "time": "2014-03-30 00:00:00",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Zelenin\\yii\\extensions\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aleksandr Zelenin",
+                "email": "aleksandr@zelenin.me",
+                "homepage": "http://zelenin.me",
+                "role": "Developer"
+            }
+        ],
+        "description": "Yii2 extension for sms.ru",
+        "homepage": "https://github.com/zelenin/yii2-sms_ru",
+        "keywords": [
+            "sms",
+            "sms.ru",
+            "yii",
+            "yii2"
+        ]
     }
 ]
