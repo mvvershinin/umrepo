@@ -5,8 +5,7 @@ return [
     'dsn' => 'mysql:host=localhost;dbname=umka',
 //    'username' => 'umkadb',
 //    'password' => 'FDHnji532n%$hgf',
-    'username' => 'root',
-    'password' => 'Nosorogov47',
+
     'charset' => 'utf8',
     'enableSchemaCache' => true,
 
