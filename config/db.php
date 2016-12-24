@@ -6,6 +6,7 @@ return [
     'username' => 'umkadb',
     'password' => 'AMEFDVKkYL4V5qya',
 
+
     'charset' => 'utf8',
     'enableSchemaCache' => true,
 
