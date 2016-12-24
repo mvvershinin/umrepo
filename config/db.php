@@ -3,10 +3,9 @@
 return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=umka',
-//    'username' => 'umkadb',
-//    'password' => 'FDHnji532n%$hgf',
-    'username' => 'root',
-    'password' => 'Nosorogov47',
+    'username' => 'umkadb',
+    'password' => 'AMEFDVKkYL4V5qya',
+
     'charset' => 'utf8',
     'enableSchemaCache' => true,
 
