@@ -8,6 +8,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use app\models\Profile;
+use Zelenin;
 /**
  * User model
  *
@@ -74,7 +75,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             ['phone', 'required'],
             ['phone', 'string', 'length' => 11],
             ['phone', 'unique', 'message' => 'Телефон занят'],
-            
+            [['lon', 'lat'], 'string'],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];
@@ -241,16 +242,24 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     {
         $params = Yii::$app->getRequest()->getBodyParams();
         $phone = $params['phone'];
+        $first = substr($phone, "0",1);
+        if($first != 7) return ("Ваш номер телефон начинается не на семерку");
         $user = new User();
         $user->username = 'umka'.$phone;
         $user->email = $phone .'@umka.ru';
-         
         $user->phone = $phone;
-          
-         
+        $user->ip4 = Yii::$app->request->userIP; 
+        $user->lon = $params['lon'];  
+        $user->lat = $params['lat'];  
+        
         //$user->password = '7777';
-        $user->setPassword('7777');
+        $password = rand(1000,9999);
+
+        \Yii::$app->sms->sms_send($phone, $password );
+        
+        $user->setPassword($password);
         $user->generateAuthKey();
+
         if (!$user->validate()) {
             return $user->validate();
         }

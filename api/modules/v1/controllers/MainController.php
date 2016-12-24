@@ -8,6 +8,7 @@ use yii\rest\Controller;
 use app\models\LoginForm;
 use app\models\User;
 use app\models\Profile;
+use app\models\UserLoginHistory;
 use yii\web\JsonParser;
 use yii\web\Request;
 
@@ -20,8 +21,17 @@ class MainController extends Controller
     {
         $model = new LoginForm();
         $params = Yii::$app->getRequest()->getBodyParams();
-        return Yii::$app->request->userIP;
+        //return Yii::$app->request->userIP;
         if ($model->load(Yii::$app->getRequest()->getBodyParams(), '') && $model->login()) {
+            $history = new UserLoginHistory;
+            $history->ip4 = Yii::$app->request->userIP; 
+            $history->lon = $params['lon'];  
+            $history->lat = $params['lat'];  
+            $history->datetime = time();
+            $history->uid = Yii::$app->user->getId();
+            if($history->validate())
+                $history->save();
+            
             return [
                 'access_token' => Yii::$app->user->identity->getAuthKey(),
                 'profile' => $model->user,
@@ -32,24 +42,7 @@ class MainController extends Controller
             return $model;
         }
     }
-    /*
-    public function actionSignup()
-    {
-        //временно отдает токен сразу после регистрации, без подтверждения
-        $model = new Signup();
-        if ($model->load(Yii::$app->getRequest()->getBodyParams(), '')) {
-             if ($user = $model->signup()) {
-                if (Yii::$app->getUser()->login($user)) {
-                    return ['access_token' => $user->authkey];
-                }
-            }
-        }
-        $model->load(Yii::$app->getRequest()->getBodyParams(), '');
-        $model->validate();
-            return $model;
-    } 
-     * 
-     */   
+
     public function actionSignup1()//$phone)
     {
         //return Yii::$app->getRequest()->getBodyParams();
@@ -63,15 +56,9 @@ class MainController extends Controller
         if($user){
             return $user;
             return array_merge(['message' => 'user exist. new user code send'], $user);
-            //return ["error" => 0, 'message' => 'user exist. new user code send']; 
-            //SmsUtils.sendRegisterCode($phone);
         }
-        //$user = new User();
-        //SmsUtils.sendRegisterCode(username); //new user
-        //return $user->save() ? $user : null;
         return User::signup();
     }
-    
     
     public function actionListServiceProfiles($level = null, $one_id = null, $gender = null)
         {
@@ -92,7 +79,5 @@ class MainController extends Controller
         }    
     public function actionTest() {
         return Yii::$app->user->getId();
-        
-        
     }    
 }

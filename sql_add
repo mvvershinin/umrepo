@@ -1,0 +1,24 @@
+ALTER TABLE  `user` ADD  `lon` VARCHAR( 15 ) NULL ,
+ADD  `lat` VARCHAR( 15 ) NULL ,
+ADD  `ip4` VARCHAR( 15 ) NULL ;
+
+
+CREATE TABLE IF NOT EXISTS `user_login_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lon` varchar(15) COLLATE utf8_bin NOT NULL,
+  `lat` varchar(15) COLLATE utf8_bin NOT NULL,
+  `ip4` varchar(15) COLLATE utf8_bin NOT NULL,
+  `datetime` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `uid` (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `user_up_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `datetime` int(11) NOT NULL,
+  `reason` varchar(30) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `uid` (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
