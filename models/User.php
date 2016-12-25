@@ -300,8 +300,8 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             $model->patronymic = '';
             
             $model->gender = 'мужской';
-            
-            $model->is_master = true;
+            $params = Yii::$app->getRequest()->getBodyParams();
+            if($params['ismaster'] == false) $model->is_master = 0;
             $model->location_place_id = 70;
             $model->work_place_id = 70;
             $model->save();
